@@ -1,2 +1,2 @@
-# flutter-playground
+# Flutter playground
 Flutter palyground project
