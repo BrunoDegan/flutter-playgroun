@@ -11,7 +11,7 @@ class MainScreen extends StatelessWidget {
         title: const Text("Flutterando Playground"),
         actions: [
           IconButton(
-            icon: Icon(),
+            icon: const Icon(Icons.arrow_back),
             tooltip: 'Voltar',
             onPressed: () => Navigator.pop(context),
           ),

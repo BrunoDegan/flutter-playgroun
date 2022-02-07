@@ -1,3 +1,3 @@
-const String signupWithAppleString = "SIGN UP WITH APPLE";
-const String signupWithFacebookString = "SIGN UP WITH FACEBOOK";
-const String signupWithPhoneNumberString = "SIGN IN WITH PHONE NUMBER";
+final String signupWithAppleString = "sign up with apple".toUpperCase();
+final String signupWithFacebookString = "sign up with facebook".toUpperCase();
+final String signupWithPhoneNumberString = "sign up with phone number".toUpperCase();

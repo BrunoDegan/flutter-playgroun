@@ -64,23 +64,23 @@ class TinderMockup extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const TinderButton(
+            TinderButton(
               buttonImage: "assets/tinder/apple_logo.svg",
-              buttonTitle: signupWithAppleString.toUpperCase(),
+              buttonTitle: signupWithAppleString,
             ),
             const SizedBox(
               height: 10,
             ),
-            const TinderButton(
+            TinderButton(
               buttonImage: "assets/tinder/facebook_logo.svg",
-              buttonTitle: signupWithFacebookString.toUpperCase(),
+              buttonTitle: signupWithFacebookString,
             ),
             const SizedBox(
               height: 10,
             ),
-            const TinderButton(
+            TinderButton(
               buttonImage: "assets/tinder/logo_tinder.png",
-              buttonTitle: signupWithPhoneNumberString.toUpperCase(),
+              buttonTitle: signupWithPhoneNumberString,
             ),
             const SizedBox(
               height: 20,
