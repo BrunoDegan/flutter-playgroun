@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_playground/money_screen/money_screen.dart';
 import 'package:flutter_playground/routes/constants_router.dart';
-import 'package:flutter_playground/tinder_mockup/tinder_mockup.dart';
+import 'package:flutter_playground/tinder_screen/tinder_screen.dart';
 
 import 'main_screen.dart';
-import 'money_mockup/money_mockup.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,13 +17,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Flutter Playground',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(primarySwatch: Colors.blue, fontFamily: 'Roboto'),
         initialRoute: homeRoute,
         home: const MainScreen(),
         routes: {
-          homeRoute: (context) => const MainScreen(),
-          tinderRoute: (context) => const TinderMockup(),
-          moneyRoute: (context) => const MoneyMockup(),
+          tinderRoute: (context) => const TinderScreen(),
+          moneyRoute: (context) => const MoneyScreen(),
         });
   }
 }
