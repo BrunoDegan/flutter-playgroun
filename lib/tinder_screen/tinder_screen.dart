@@ -19,17 +19,19 @@ final BoxDecoration _boxDecoration = BoxDecoration(
   ),
 );
 
-const Widget _troubleShootingText = Center(
-  child: Text(
-    "Trouble Signing In?",
-    style: TextStyle(
-        fontWeight: FontWeight.normal,
-        decoration: TextDecoration.none,
-        backgroundColor: Colors.transparent,
-        color: Colors.white,
-        fontStyle: FontStyle.normal,
-        fontSize: 15.0),
-  ),
+Widget _troubleShootingText = Center(
+  child: GestureDetector(
+      child: const Text(
+        "Trouble Signing In?",
+        style: TextStyle(
+            fontWeight: FontWeight.normal,
+            decoration: TextDecoration.none,
+            backgroundColor: Colors.transparent,
+            color: Colors.white,
+            fontStyle: FontStyle.normal,
+            fontSize: 15.0),
+      ),
+      onTap: () => {}),
 );
 
 Widget _infoText = Container(
@@ -61,11 +63,16 @@ Widget bodyContent(BuildContext context) {
         onPressed: () => Navigator.pop(context),
       ),
     ),
-    body: mainContent(),
+    body: mainContent(
+        context,
+        (info) => {
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: Text(info), duration: const Duration(seconds: 1)))
+            }),
   );
 }
 
-Widget mainContent() {
+Widget mainContent(BuildContext context, Function(String) onClickListener) {
   return Container(
     padding: const EdgeInsets.all(30.0),
     decoration: _boxDecoration,
@@ -92,7 +99,7 @@ Widget mainContent() {
           buttonImage: "assets/tinder/apple_logo.svg",
           buttonTitle: signupWithAppleString,
           onButtonClicked: () {
-            print("Clicou no botão do apple");
+            onClickListener.call("Logar com Apple!!");
           },
         ),
         const SizedBox(
@@ -102,7 +109,7 @@ Widget mainContent() {
           buttonImage: "assets/tinder/facebook_logo.svg",
           buttonTitle: signupWithFacebookString,
           onButtonClicked: () {
-            print("Clicou no botão do facebook");
+            onClickListener.call("Logar com facebook!!");
           },
         ),
         const SizedBox(
@@ -112,7 +119,7 @@ Widget mainContent() {
           buttonImage: "assets/tinder/dialog.svg",
           buttonTitle: signupWithPhoneNumberString,
           onButtonClicked: () {
-            print("Clicou no botão do tinder");
+            onClickListener.call("Logar com Tinder!!");
           },
         ),
         const SizedBox(
