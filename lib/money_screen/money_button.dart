@@ -19,7 +19,8 @@ class MoneyButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(onTap: () => {}, child: containerButton());
+    return GestureDetector(
+        onTap: () => {onButtonClicked.call()}, child: containerButton());
   }
 
   List<Widget> handleButtonType() {
@@ -27,14 +28,14 @@ class MoneyButton extends StatelessWidget {
       return [
         SvgPicture.asset(
           buttonImage!,
-          height: 35.0,
+          height: 20.0,
         ),
-        const Spacer(),
+        const SizedBox(width: 8),
         Text(
           buttonTitle,
           style: textStyle,
         ),
-        const Spacer(),
+        const SizedBox(width: 5),
       ];
     } else {
       return [
@@ -42,7 +43,7 @@ class MoneyButton extends StatelessWidget {
           buttonTitle,
           style: textStyle,
         ),
-        const Spacer(),
+        const SizedBox(width: 5),
       ];
     }
   }
@@ -56,13 +57,12 @@ class MoneyButton extends StatelessWidget {
       height: 50.0,
       width: double.infinity,
       child: Padding(
-          padding: const EdgeInsets.all(10),
-          child: Center(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: handleButtonType(),
-            ),
-          )),
+        padding: const EdgeInsets.all(5),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: handleButtonType(),
+        ),
+      ),
     );
   }
 }

@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:flutter_playground/common/tinder_strings_formatter.dart';
+import 'package:flutter_playground/common/string_formatter.dart';
 import 'package:flutter_playground/tinder_screen/tinder_strings.dart';
 import 'package:flutter_playground/tinder_screen/tinder_button.dart';
 import 'package:flutter_svg/svg.dart';
@@ -11,7 +11,7 @@ final List<Color> _backgroundLinearGradient = [
   const Color.fromARGB(226, 221, 107, 118),
 ];
 
-final BoxDecoration boxDecoration = BoxDecoration(
+final BoxDecoration _boxDecoration = BoxDecoration(
   gradient: LinearGradient(
     colors: _backgroundLinearGradient,
     begin: Alignment.centerLeft,
@@ -19,7 +19,7 @@ final BoxDecoration boxDecoration = BoxDecoration(
   ),
 );
 
-const Widget troubleShootingText = Center(
+const Widget _troubleShootingText = Center(
   child: Text(
     "Trouble Signing In?",
     style: TextStyle(
@@ -32,7 +32,7 @@ const Widget troubleShootingText = Center(
   ),
 );
 
-Widget infoText = Container(
+Widget _infoText = Container(
   margin: const EdgeInsets.all(20.0),
   child: RichText(
     textAlign: TextAlign.center,
@@ -68,7 +68,7 @@ Widget bodyContent(BuildContext context) {
 Widget mainContent() {
   return Container(
     padding: const EdgeInsets.all(30.0),
-    decoration: boxDecoration,
+    decoration: _boxDecoration,
     height: double.infinity,
     width: double.infinity,
     child: Column(
@@ -84,7 +84,7 @@ Widget mainContent() {
         const SizedBox(
           height: 100.0,
         ),
-        infoText,
+        _infoText,
         const SizedBox(
           height: 20,
         ),
@@ -118,7 +118,7 @@ Widget mainContent() {
         const SizedBox(
           height: 20,
         ),
-        troubleShootingText
+        _troubleShootingText
       ],
     ),
   );
