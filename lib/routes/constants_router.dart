@@ -1,3 +1,9 @@
 const String tinderRoute = "tinder";
 const String moneyRoute = "money";
+const String implicitAnimations = "implicit_animations";
+const String controlledAnimations = "controlled_animations";
+const String implicitAnimatedButton = "implicit_animated_button";
+const String implicitAnimatedList = "implicit_animated_list";
+const String explicitAnimatedButton = "explicit_animated_button";
+const String explicitAnimatedList = "explicit_animated_list";
 const String homeRoute = "/";

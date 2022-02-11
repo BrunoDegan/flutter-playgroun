@@ -5,8 +5,9 @@ class TinderButton extends StatelessWidget {
   final String buttonImage;
   final String buttonTitle;
   final Function onButtonClicked;
+  late double screenWidth;
 
-  const TinderButton(
+  TinderButton(
       {Key? key,
       required this.buttonImage,
       required this.buttonTitle,
@@ -15,10 +16,12 @@ class TinderButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    screenWidth = MediaQuery.of(context).size.width;
+
     return GestureDetector(
       onTap: () => {onButtonClicked.call()},
       child: Container(
-        width: double.infinity,
+        width: screenWidth,
         height: 50.0,
         decoration: BoxDecoration(
           color: Colors.transparent,

@@ -76,8 +76,8 @@ Widget mainContent(BuildContext context, Function(String) onClickListener) {
   return Container(
     padding: const EdgeInsets.all(30.0),
     decoration: _boxDecoration,
-    height: double.infinity,
-    width: double.infinity,
+    height: MediaQuery.of(context).size.height,
+    width: MediaQuery.of(context).size.width,
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,

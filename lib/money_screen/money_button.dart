@@ -7,8 +7,9 @@ class MoneyButton extends StatelessWidget {
   final Function onButtonClicked;
   final Color backgroundButtonColor;
   final TextStyle textStyle;
+  late double screenWidth;
 
-  const MoneyButton(
+  MoneyButton(
       {Key? key,
       this.buttonImage,
       required this.buttonTitle,
@@ -19,6 +20,8 @@ class MoneyButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    screenWidth = MediaQuery.of(context).size.width;
+
     return GestureDetector(
         onTap: () => {onButtonClicked.call()}, child: containerButton());
   }
@@ -55,7 +58,7 @@ class MoneyButton extends StatelessWidget {
           shape: BoxShape.rectangle,
           borderRadius: BorderRadius.circular(5.0)),
       height: 50.0,
-      width: double.infinity,
+      width: screenWidth,
       child: Padding(
         padding: const EdgeInsets.all(5),
         child: Row(

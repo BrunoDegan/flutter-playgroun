@@ -91,8 +91,8 @@ class MoneyScreen extends StatelessWidget {
         ),
         body: Container(
             padding: const EdgeInsets.all(80.0),
-            height: double.infinity,
-            width: double.infinity,
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
             child: mainContent((info) {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                   content: Text(info), duration: const Duration(seconds: 1)));
