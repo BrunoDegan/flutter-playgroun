@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_playground/animations/implicit/button/implicit_animated_button_page.dart';
 import 'package:flutter_playground/money_screen/money_screen.dart';
 import 'package:flutter_playground/routes/constants_router.dart';
 import 'package:flutter_playground/tinder_screen/tinder_screen.dart';
 
+import 'animations/implicit/list/implicit_animated_list_page.dart';
 import 'main_screen.dart';
 
 void main() {
@@ -24,6 +26,9 @@ class MyApp extends StatelessWidget {
         routes: {
           tinderRoute: (context) => const TinderScreen(),
           moneyRoute: (context) => const MoneyScreen(),
+          implicitAnimatedButton: (context) =>
+              const ImplicitAnimatedButtonPage(),
+          implicitAnimatedList: (context) => const ImplicitAnimatedListPage(),
         });
   }
 }

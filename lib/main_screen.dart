@@ -11,13 +11,10 @@ class MainScreen extends StatelessWidget {
     return ElevatedButton(
       onPressed: () => {onClicked.call()},
       child: SizedBox(
-        width: 150,
+        width: 220,
         height: 40,
-        child: Padding(
-          padding: const EdgeInsets.all(5.0),
-          child: Center(
-            child: Text(buttonText),
-          ),
+        child: Center(
+          child: Text(buttonText),
         ),
       ),
     );
@@ -30,27 +27,71 @@ class MainScreen extends StatelessWidget {
         title: const Text("Flutterando Playground"),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(
+          padding: const EdgeInsets.all(20.0),
           children: <Widget>[
             HomeButton(
               context: context,
-              buttonText: "Tinder",
+              buttonText: "Tela Tinder",
               onClicked: () {
                 Navigator.of(context).pushNamed(tinderRoute);
               },
             ),
-            const SizedBox(
-              width: double.infinity,
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
               height: 10,
             ),
             HomeButton(
               context: context,
-              buttonText: "Money Management",
+              buttonText: "Tela Money Management",
               onClicked: () {
                 Navigator.of(context).pushNamed(moneyRoute);
               },
-            )
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: 10,
+            ),
+            HomeButton(
+              context: context,
+              buttonText: "Demo Aula de animações implícitas",
+              onClicked: () {
+                Navigator.of(context).pushNamed(implicitAnimations);
+              },
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: 10,
+            ),
+            HomeButton(
+              context: context,
+              buttonText: "Demo Aula de animações controladas",
+              onClicked: () {
+                Navigator.of(context).pushNamed(controlledAnimations);
+              },
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: 10,
+            ),
+            HomeButton(
+              context: context,
+              buttonText: "Desafio Animações implícitas do botão",
+              onClicked: () {
+                Navigator.of(context).pushNamed(implicitAnimatedButton);
+              },
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: 10,
+            ),
+            HomeButton(
+              context: context,
+              buttonText: "Desafio Animações implicitas da lista",
+              onClicked: () {
+                Navigator.of(context).pushNamed(implicitAnimatedList);
+              },
+            ),
           ],
         ),
       ),
