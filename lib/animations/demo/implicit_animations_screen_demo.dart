@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class ImplicitAnimationScreenDemo extends StatefulWidget {
-  const ImplicitAnimationScreenDemo({Key? key}) : super(key: key);
+class ImplicitAnimationPageDemo extends StatefulWidget {
+  const ImplicitAnimationPageDemo({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _ImplicitAnimationPageStateDemo();
 }
 
 class _ImplicitAnimationPageStateDemo
-    extends State<ImplicitAnimationScreenDemo> {
+    extends State<ImplicitAnimationPageDemo> {
   bool _isExpanded = false;
   final Duration _duration = const Duration(milliseconds: 500);
   final Curve _curve = Curves.ease;

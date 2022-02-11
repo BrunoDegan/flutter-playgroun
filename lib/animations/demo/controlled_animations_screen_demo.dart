@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
-class ControlledAnimationsPage extends StatefulWidget {
-  const ControlledAnimationsPage({Key? key}) : super(key: key);
+class ControlledAnimationsPageDemo extends StatefulWidget {
+  const ControlledAnimationsPageDemo({Key? key}) : super(key: key);
 
   @override
-  _ControlledAnimationState createState() => _ControlledAnimationState();
+  _ControlledAnimationPageState createState() =>
+      _ControlledAnimationPageState();
 }
 
-class _ControlledAnimationState extends State<ControlledAnimationsPage>
+class _ControlledAnimationPageState extends State<ControlledAnimationsPageDemo>
     with TickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<Size?> sizeAnimation;

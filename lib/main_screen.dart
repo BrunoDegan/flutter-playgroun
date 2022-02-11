@@ -11,7 +11,7 @@ class MainScreen extends StatelessWidget {
     return ElevatedButton(
       onPressed: () => {onClicked.call()},
       child: SizedBox(
-        width: 220,
+        width: MediaQuery.of(context).size.width,
         height: 40,
         child: Center(
           child: Text(buttonText),
@@ -56,7 +56,7 @@ class MainScreen extends StatelessWidget {
               context: context,
               buttonText: "Demo Aula de animações implícitas",
               onClicked: () {
-                Navigator.of(context).pushNamed(implicitAnimations);
+                Navigator.of(context).pushNamed(implicitAnimationsDemo);
               },
             ),
             SizedBox(
@@ -67,7 +67,7 @@ class MainScreen extends StatelessWidget {
               context: context,
               buttonText: "Demo Aula de animações controladas",
               onClicked: () {
-                Navigator.of(context).pushNamed(controlledAnimations);
+                Navigator.of(context).pushNamed(controlledAnimationsDemo);
               },
             ),
             SizedBox(

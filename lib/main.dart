@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_playground/animations/demo/controlled_animations_screen_demo.dart';
+import 'package:flutter_playground/animations/demo/implicit_animations_screen_demo.dart';
 import 'package:flutter_playground/animations/implicit/button/implicit_animated_button_page.dart';
 import 'package:flutter_playground/money_screen/money_screen.dart';
 import 'package:flutter_playground/routes/constants_router.dart';
@@ -29,6 +31,10 @@ class MyApp extends StatelessWidget {
           implicitAnimatedButton: (context) =>
               const ImplicitAnimatedButtonPage(),
           implicitAnimatedList: (context) => const ImplicitAnimatedListPage(),
+          implicitAnimationsDemo: (context) =>
+              const ImplicitAnimationPageDemo(),
+          controlledAnimationsDemo: (context) =>
+              const ControlledAnimationsPageDemo()
         });
   }
 }
