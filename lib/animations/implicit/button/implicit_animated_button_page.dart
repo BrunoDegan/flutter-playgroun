@@ -7,8 +7,7 @@ class ImplicitAnimatedButtonPage extends StatefulWidget {
   _ImplicitAnimatedButtonState createState() => _ImplicitAnimatedButtonState();
 }
 
-class _ImplicitAnimatedButtonState
-    extends State<ImplicitAnimatedButtonPage> {
+class _ImplicitAnimatedButtonState extends State<ImplicitAnimatedButtonPage> {
   bool _isPressed = false;
   final Duration _duration = const Duration(seconds: 1);
   final Curve _curve = Curves.easeIn;

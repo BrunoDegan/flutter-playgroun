@@ -92,6 +92,17 @@ class MainScreen extends StatelessWidget {
                 Navigator.of(context).pushNamed(implicitAnimatedList);
               },
             ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: 10,
+            ),
+            HomeButton(
+              context: context,
+              buttonText: "Desafio Animações controladas do botão",
+              onClicked: () {
+                Navigator.of(context).pushNamed(controlledAnimatedButton);
+              },
+            ),
           ],
         ),
       ),

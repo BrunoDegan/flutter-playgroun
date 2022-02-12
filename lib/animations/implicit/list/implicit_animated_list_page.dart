@@ -18,7 +18,7 @@ class ImplicitAnimatedListPageState extends State<ImplicitAnimatedListPage> {
   @override
   void initState() {
     super.initState();
-    for (var i = 0; i <= 100; i++) {
+    for (var i = 0; i <= 20; i++) {
       listData.add(ListData(
           title: "My expansion tile $i",
           description: lorenIpsum,

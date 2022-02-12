@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_playground/animations/controlled/button/controlled_animated_button_page.dart';
 import 'package:flutter_playground/animations/demo/controlled_animations_screen_demo.dart';
 import 'package:flutter_playground/animations/demo/implicit_animations_screen_demo.dart';
 import 'package:flutter_playground/animations/implicit/button/implicit_animated_button_page.dart';
@@ -34,7 +35,9 @@ class MyApp extends StatelessWidget {
           implicitAnimationsDemo: (context) =>
               const ImplicitAnimationPageDemo(),
           controlledAnimationsDemo: (context) =>
-              const ControlledAnimationsPageDemo()
+              const ControlledAnimationsPageDemo(),
+          controlledAnimatedButton: (context) =>
+              const ControlledAnimatedButtonPage(),
         });
   }
 }
