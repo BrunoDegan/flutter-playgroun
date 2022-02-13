@@ -12,7 +12,7 @@ class _ControlledAnimationPageState extends State<ControlledAnimationsPageDemo>
     with TickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<Size?> sizeAnimation;
-  late Animation<Color?> colorAnimation;
+  late Animation<Color?> _colorAnimation;
   final Duration _duration = const Duration(seconds: 4);
 
   void onToggle() {
@@ -41,7 +41,7 @@ class _ControlledAnimationPageState extends State<ControlledAnimationsPageDemo>
         SizeTween(begin: const Size(50, 50), end: const Size(100, 100))
             .animate(_controller);
 
-    colorAnimation =
+    _colorAnimation =
         ColorTween(begin: Colors.pink, end: Colors.blue).animate(_controller);
 
     _controller.addListener(() {
@@ -52,20 +52,23 @@ class _ControlledAnimationPageState extends State<ControlledAnimationsPageDemo>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text("Controlled Animations")),
-        body: Center(
-            child: AnimatedBuilder(
-                animation: _controller,
-                builder: (context, child) {
-                  return GestureDetector(
-                    onTap: onToggle,
-                    child: Container(
-                      width: sizeAnimation.value?.width,
-                      height: sizeAnimation.value?.height,
-                      color: colorAnimation.value,
-                      child: child,
-                    ),
-                  );
-                })));
+      appBar: AppBar(title: const Text("Controlled Animations")),
+      body: Center(
+        child: AnimatedBuilder(
+          animation: _controller,
+          builder: (context, child) {
+            return GestureDetector(
+              onTap: onToggle,
+              child: Container(
+                width: sizeAnimation.value?.width,
+                height: sizeAnimation.value?.height,
+                color: _colorAnimation.value,
+                child: child,
+              ),
+            );
+          },
+        ),
+      ),
+    );
   }
 }

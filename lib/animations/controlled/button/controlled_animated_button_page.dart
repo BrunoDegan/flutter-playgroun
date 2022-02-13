@@ -76,42 +76,43 @@ class _ControlledAnimatedButtonPageState
 
   @override
   void dispose() {
-    super.dispose();
     _controller.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: const Text("Desafio Animação controlada - Botão"),
-          leading: IconButton(
-            tooltip: 'Voltar',
-            icon: const Icon(Icons.arrow_back_ios),
-            onPressed: () {
-              _controller.dispose();
-              Navigator.of(context).pop();
-            },
-          ),
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text("Desafio Animação controlada - Botão"),
+        leading: IconButton(
+          tooltip: 'Voltar',
+          icon: const Icon(Icons.arrow_back_ios),
+          onPressed: () {
+            _controller.dispose();
+            Navigator.of(context).pop();
+          },
         ),
-        body: SafeArea(
-          child: GestureDetector(
-            onTap: toggleControlledAnimation,
-            child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Align(
-                  alignment: _alignmentAnimation.value!,
-                  child: Container(
-                    width: _sizeAnimation.value?.width,
-                    height: _sizeAnimation.value?.height,
-                    decoration: BoxDecoration(
-                      borderRadius: _radiusAnimation.value,
-                      color: Colors.blue,
-                    ),
+      ),
+      body: SafeArea(
+        child: GestureDetector(
+          onTap: toggleControlledAnimation,
+          child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Align(
+                alignment: _alignmentAnimation.value!,
+                child: Container(
+                  width: _sizeAnimation.value?.width,
+                  height: _sizeAnimation.value?.height,
+                  decoration: BoxDecoration(
+                    borderRadius: _radiusAnimation.value,
+                    color: Colors.blue,
                   ),
-                )),
-          ),
-        ));
+                ),
+              )),
+        ),
+      ),
+    );
   }
 }
