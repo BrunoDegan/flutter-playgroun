@@ -100,7 +100,7 @@ class _ControlledAnimatedListTileState extends State<ControlledAnimatedListTile>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _toggleButtonClicked,
+      onTap: () => _toggleButtonClicked(),
       child: AnimatedBuilder(
           animation: _animatedController,
           builder: (context, child) {
@@ -146,12 +146,9 @@ class _ControlledAnimatedListTileState extends State<ControlledAnimatedListTile>
                   ),
                   RotationTransition(
                     turns: _rotateIconAnimation,
-                    child: IconButton(
-                      onPressed: _toggleButtonClicked,
-                      icon: Icon(
-                        Icons.keyboard_arrow_down,
-                        color: _colorAnimation.value!,
-                      ),
+                    child: Icon(
+                      Icons.keyboard_arrow_down,
+                      color: _colorAnimation.value!,
                     ),
                   ),
                 ],
