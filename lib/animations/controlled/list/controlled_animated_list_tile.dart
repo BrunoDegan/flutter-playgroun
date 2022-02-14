@@ -101,13 +101,14 @@ class _ControlledAnimatedListTileState extends State<ControlledAnimatedListTile>
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-        animation: _animatedController,
-        builder: (context, child) {
-          return GestureDetector(
-            child: _bodyWidget(),
-            onTap: () => _toggleButtonClicked,
-          );
-        });
+      animation: _animatedController,
+      builder: (context, child) {
+        return GestureDetector(
+          child: _bodyWidget(),
+          onTap: () => _toggleButtonClicked,
+        );
+      },
+    );
   }
 
   void _toggleControlledAnimation() {

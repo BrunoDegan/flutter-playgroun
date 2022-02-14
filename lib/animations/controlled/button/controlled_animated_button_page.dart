@@ -22,11 +22,6 @@ class _ControlledAnimatedButtonPageState
   void initState() {
     super.initState();
     _controller = AnimationController(vsync: this, duration: _duration);
-    _controller.addListener(() {
-      setState(() {
-        print(_controller.value);
-      });
-    });
     _createAnimations();
   }
 
@@ -82,37 +77,42 @@ class _ControlledAnimatedButtonPageState
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text("Desafio Animação controlada - Botão"),
-        leading: IconButton(
-          tooltip: 'Voltar',
-          icon: const Icon(Icons.arrow_back_ios),
-          onPressed: () {
-            _controller.dispose();
-            Navigator.of(context).pop();
-          },
-        ),
-      ),
-      body: SafeArea(
-        child: GestureDetector(
-          onTap: toggleControlledAnimation,
-          child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Align(
-                alignment: _alignmentAnimation.value!,
-                child: Container(
-                  width: _sizeAnimation.value?.width,
-                  height: _sizeAnimation.value?.height,
-                  decoration: BoxDecoration(
-                    borderRadius: _radiusAnimation.value,
-                    color: Colors.blue,
-                  ),
-                ),
-              )),
-        ),
-      ),
+    return AnimatedBuilder(
+      animation: _controller,
+      builder: (context, child) {
+        return Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            title: const Text("Desafio Animação controlada - Botão"),
+            leading: IconButton(
+              tooltip: 'Voltar',
+              icon: const Icon(Icons.arrow_back_ios),
+              onPressed: () {
+                _controller.dispose();
+                Navigator.of(context).pop();
+              },
+            ),
+          ),
+          body: SafeArea(
+            child: GestureDetector(
+              onTap: toggleControlledAnimation,
+              child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Align(
+                    alignment: _alignmentAnimation.value!,
+                    child: Container(
+                      width: _sizeAnimation.value?.width,
+                      height: _sizeAnimation.value?.height,
+                      decoration: BoxDecoration(
+                        borderRadius: _radiusAnimation.value,
+                        color: Colors.blue,
+                      ),
+                    ),
+                  )),
+            ),
+          ),
+        );
+      },
     );
   }
 }
