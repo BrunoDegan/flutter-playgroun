@@ -45,10 +45,13 @@ class _ControlledAnimatedListPage extends State<ControlledAnimatedListPage> {
 
   void _populateList() {
     for (var i = 0; i <= 20; i++) {
-      _listData.add(ListData(
+      _listData.add(
+        ListData(
           title: "My expansion tile $i",
           description: lorenIpsum,
-          flutterLogo: const FlutterLogo()));
+          flutterLogo: const FlutterLogo(),
+        ),
+      );
     }
   }
 }

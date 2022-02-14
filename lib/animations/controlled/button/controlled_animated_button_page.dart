@@ -97,18 +97,19 @@ class _ControlledAnimatedButtonPageState
             child: GestureDetector(
               onTap: toggleControlledAnimation,
               child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Align(
-                    alignment: _alignmentAnimation.value!,
-                    child: Container(
-                      width: _sizeAnimation.value?.width,
-                      height: _sizeAnimation.value?.height,
-                      decoration: BoxDecoration(
-                        borderRadius: _radiusAnimation.value,
-                        color: Colors.blue,
-                      ),
+                padding: const EdgeInsets.all(20.0),
+                child: Align(
+                  alignment: _alignmentAnimation.value!,
+                  child: Container(
+                    width: _sizeAnimation.value?.width,
+                    height: _sizeAnimation.value?.height,
+                    decoration: BoxDecoration(
+                      borderRadius: _radiusAnimation.value,
+                      color: Colors.blue,
                     ),
-                  )),
+                  ),
+                ),
+              ),
             ),
           ),
         );

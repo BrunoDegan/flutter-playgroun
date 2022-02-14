@@ -145,10 +145,12 @@ class _ControlledAnimatedListTileState extends State<ControlledAnimatedListTile>
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Expanded(
-                    child: Text(data.title,
-                        style: TextStyle(
-                          color: _colorAnimation.value,
-                        )),
+                    child: Text(
+                      data.title,
+                      style: TextStyle(
+                        color: _colorAnimation.value,
+                      ),
+                    ),
                   ),
                   RotationTransition(
                     turns: _rotateIconAnimation,
