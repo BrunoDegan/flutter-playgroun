@@ -43,7 +43,7 @@ class _ControlledAnimatedListPage extends State<ControlledAnimatedListPage> {
     );
   }
 
-  void _populateList() {
+  _populateList() {
     for (var i = 0; i <= 20; i++) {
       _listData.add(
         ListData(

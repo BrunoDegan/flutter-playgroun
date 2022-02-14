@@ -67,12 +67,12 @@ class _ImplicitAnimatedState extends State<ImplicitAnimatedTile> {
     );
   }
 
-  Icon getArrowDownward() => const Icon(
+  getArrowDownward() => const Icon(
         Icons.keyboard_arrow_down_rounded,
         color: Colors.blue,
       );
 
-  Icon getArrowUpward() => const Icon(
+  getArrowUpward() => const Icon(
         Icons.keyboard_arrow_down_rounded,
         color: Colors.grey,
       );
@@ -81,7 +81,7 @@ class _ImplicitAnimatedState extends State<ImplicitAnimatedTile> {
         _isPressed = !_isPressed;
       });
 
-  AnimatedContainer _animatedBodyContainer() {
+  _animatedBodyContainer() {
     return AnimatedContainer(
       duration: _duration,
       height: _isPressed ? 300 : 0,
@@ -93,7 +93,7 @@ class _ImplicitAnimatedState extends State<ImplicitAnimatedTile> {
     );
   }
 
-  AnimatedOpacity _animatedBodyOpacity() {
+  _animatedBodyOpacity() {
     return AnimatedOpacity(
       opacity: _isPressed ? 1 : 0,
       duration: _duration,

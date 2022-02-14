@@ -29,21 +29,23 @@ class ImplicitAnimatedListPageState extends State<ImplicitAnimatedListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: const Text("Desafio Animação implicita - Lista"),
-          leading: IconButton(
-            tooltip: 'Voltar',
-            icon: const Icon(Icons.arrow_back_ios),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text("Desafio Animação implicita - Lista"),
+        leading: IconButton(
+          tooltip: 'Voltar',
+          icon: const Icon(Icons.arrow_back_ios),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
         ),
-        body: ListView.builder(
-            itemCount: listData.length,
-            itemBuilder: (context, index) {
-              return ImplicitAnimatedTile(animationData: listData[index]);
-            }));
+      ),
+      body: ListView.builder(
+        itemCount: listData.length,
+        itemBuilder: (context, index) {
+          return ImplicitAnimatedTile(animationData: listData[index]);
+        },
+      ),
+    );
   }
 }

@@ -35,7 +35,6 @@ class _ControlledAnimatedListTileState extends State<ControlledAnimatedListTile>
       duration: _duration,
     );
     _createAnimations();
-    setState(() {});
     super.initState();
   }
 
@@ -84,13 +83,13 @@ class _ControlledAnimatedListTileState extends State<ControlledAnimatedListTile>
 
     _rotateIconAnimation = Tween<double>(
       begin: 0.0,
-      end: 0.5,
+      end: -0.5,
     ).animate(
       CurvedAnimation(
         parent: _animatedController,
         curve: Interval(
           0.0,
-          0.2,
+          0.5,
           curve: _curve,
         ),
       ),
@@ -111,7 +110,7 @@ class _ControlledAnimatedListTileState extends State<ControlledAnimatedListTile>
     );
   }
 
-  void _toggleControlledAnimation() {
+  _toggleControlledAnimation() {
     if (_animatedController.value == 0) {
       _animatedController.forward();
     } else {
@@ -119,7 +118,7 @@ class _ControlledAnimatedListTileState extends State<ControlledAnimatedListTile>
     }
   }
 
-  void _toggleButtonClicked() => setState(() {
+  _toggleButtonClicked() => setState(() {
         _isPressed = !_isPressed;
         _toggleControlledAnimation();
       });
@@ -130,7 +129,7 @@ class _ControlledAnimatedListTileState extends State<ControlledAnimatedListTile>
     super.dispose();
   }
 
-  Widget _bodyWidget() {
+  _bodyWidget() {
     return SizedBox(
       child: Card(
         elevation: _isPressed ? 1 : 0,
