@@ -55,8 +55,9 @@ class _ImplicitAnimatedState extends State<ImplicitAnimatedTile> {
                   turns: _isPressed ? -0.5 : 0.0,
                   duration: _duration,
                   child: IconButton(
-                      onPressed: toggleButtonClicked,
-                      icon: _isPressed ? getArrowDownward() : getArrowUpward()),
+                    onPressed: toggleButtonClicked,
+                    icon: _isPressed ? getArrowDownward() : getArrowUpward(),
+                  ),
                 )
               ],
             ),
@@ -77,9 +78,11 @@ class _ImplicitAnimatedState extends State<ImplicitAnimatedTile> {
         color: Colors.grey,
       );
 
-  void toggleButtonClicked() => setState(() {
-        _isPressed = !_isPressed;
-      });
+  toggleButtonClicked() => setState(
+        () {
+          _isPressed = !_isPressed;
+        },
+      );
 
   _animatedBodyContainer() {
     return AnimatedContainer(

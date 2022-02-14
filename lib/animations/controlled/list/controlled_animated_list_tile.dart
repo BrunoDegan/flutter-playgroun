@@ -17,7 +17,7 @@ class _ControlledAnimatedListTileState extends State<ControlledAnimatedListTile>
     with TickerProviderStateMixin {
   bool _isPressed = false;
   final Duration _duration = const Duration(milliseconds: 500);
-  final _curve = Curves.linear;
+  final _curve = Curves.easeOut;
   final ListData data;
 
   late AnimationController _animatedController;
@@ -99,22 +99,21 @@ class _ControlledAnimatedListTileState extends State<ControlledAnimatedListTile>
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      animation: _animatedController,
-      builder: (context, child) {
-        return GestureDetector(
-          child: _bodyWidget(),
-          onTap: () => _toggleButtonClicked,
-        );
-      },
+    return GestureDetector(
+      onTap: () => _toggleButtonClicked,
+      child: AnimatedBuilder(
+          animation: _animatedController,
+          builder: (context, child) {
+            return _bodyWidget();
+          }),
     );
   }
 
   _toggleControlledAnimation() {
-    if (_animatedController.value == 0) {
-      _animatedController.forward();
-    } else {
+    if (_animatedController.isAnimating || _animatedController.isCompleted) {
       _animatedController.reverse();
+    } else {
+      _animatedController.forward();
     }
   }
 
@@ -122,12 +121,6 @@ class _ControlledAnimatedListTileState extends State<ControlledAnimatedListTile>
         _isPressed = !_isPressed;
         _toggleControlledAnimation();
       });
-
-  @override
-  void dispose() {
-    _animatedController.dispose();
-    super.dispose();
-  }
 
   _bodyWidget() {
     return SizedBox(
@@ -183,6 +176,9 @@ class _ControlledAnimatedListTileState extends State<ControlledAnimatedListTile>
             opacity: _opacityAnimation.value,
             child: Column(
               children: [
+                const SizedBox(
+                  height: 10,
+                ),
                 const FlutterLogo(
                   size: 40,
                 ),
@@ -193,9 +189,18 @@ class _ControlledAnimatedListTileState extends State<ControlledAnimatedListTile>
                   data.description,
                   textAlign: TextAlign.justify,
                 ),
+                const SizedBox(
+                  height: 15,
+                ),
               ],
             ),
           ),
         ),
       );
+
+  @override
+  void dispose() {
+    _animatedController.dispose();
+    super.dispose();
+  }
 }
