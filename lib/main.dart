@@ -33,10 +33,10 @@ class MyApp extends StatelessWidget {
           implicitAnimatedButton: (context) =>
               const ImplicitAnimatedButtonPage(),
           implicitAnimatedList: (context) => const ImplicitAnimatedListPage(),
-          implicitAnimationsDemo: (context) =>
-              const ImplicitAnimationPageDemo(),
-          controlledAnimationsDemo: (context) =>
-              const ControlledAnimationsPageDemo(),
+          // implicitAnimationsDemo: (context) =>
+          //     const ImplicitAnimationPageDemo(),
+          // controlledAnimationsDemo: (context) =>
+          //     const ControlledAnimationsPageDemo(),
           controlledAnimatedButton: (context) =>
               const ControlledAnimatedButtonPage(),
           controlledAnimatedList: (context) =>

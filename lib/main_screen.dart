@@ -48,28 +48,28 @@ class MainScreen extends StatelessWidget {
                 Navigator.of(context).pushNamed(moneyRoute);
               },
             ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width,
-              height: 10,
-            ),
-            HomeButton(
-              context: context,
-              buttonText: "Demo Aula de animações implícitas",
-              onClicked: () {
-                Navigator.of(context).pushNamed(implicitAnimationsDemo);
-              },
-            ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width,
-              height: 10,
-            ),
-            HomeButton(
-              context: context,
-              buttonText: "Demo Aula de animações controladas",
-              onClicked: () {
-                Navigator.of(context).pushNamed(controlledAnimationsDemo);
-              },
-            ),
+            // SizedBox(
+            //   width: MediaQuery.of(context).size.width,
+            //   height: 10,
+            // ),
+            // HomeButton(
+            //   context: context,
+            //   buttonText: "Demo Aula de animações implícitas",
+            //   onClicked: () {
+            //     Navigator.of(context).pushNamed(implicitAnimationsDemo);
+            //   },
+            // ),
+            // SizedBox(
+            //   width: MediaQuery.of(context).size.width,
+            //   height: 10,
+            // ),
+            // HomeButton(
+            //   context: context,
+            //   buttonText: "Demo Aula de animações controladas",
+            //   onClicked: () {
+            //     Navigator.of(context).pushNamed(controlledAnimationsDemo);
+            //   },
+            // ),
             SizedBox(
               width: MediaQuery.of(context).size.width,
               height: 10,
