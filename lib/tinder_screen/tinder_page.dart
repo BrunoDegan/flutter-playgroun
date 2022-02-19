@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:flutter_playground/common/string_formatter.dart';
+import 'package:flutter_playground/common/text_formatter.dart';
 import 'package:flutter_playground/tinder_screen/tinder_strings.dart';
 import 'package:flutter_playground/tinder_screen/tinder_button.dart';
 import 'package:flutter_svg/svg.dart';
@@ -73,66 +73,68 @@ Widget bodyContent(BuildContext context) {
 }
 
 Widget mainContent(BuildContext context, Function(String) onClickListener) {
-  return Container(
-    padding: const EdgeInsets.all(30.0),
-    decoration: _boxDecoration,
-    height: MediaQuery.of(context).size.height,
-    width: MediaQuery.of(context).size.width,
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        const SizedBox(height: 200.0),
-        SvgPicture.asset(
-          "assets/tinder/tinder_logo.svg",
-          width: 50.0,
-          height: 50.0,
-        ),
-        const SizedBox(
-          height: 100.0,
-        ),
-        _infoText,
-        const SizedBox(
-          height: 20,
-        ),
-        TinderButton(
-          buttonImage: "assets/tinder/apple_logo.svg",
-          buttonTitle: signupWithAppleString,
-          onButtonClicked: () {
-            onClickListener.call("Logar com Apple!!");
-          },
-        ),
-        const SizedBox(
-          height: 10,
-        ),
-        TinderButton(
-          buttonImage: "assets/tinder/facebook_logo.svg",
-          buttonTitle: signupWithFacebookString,
-          onButtonClicked: () {
-            onClickListener.call("Logar com facebook!!");
-          },
-        ),
-        const SizedBox(
-          height: 10,
-        ),
-        TinderButton(
-          buttonImage: "assets/tinder/dialog.svg",
-          buttonTitle: signupWithPhoneNumberString,
-          onButtonClicked: () {
-            onClickListener.call("Logar com Tinder!!");
-          },
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-        _troubleShootingText
-      ],
+  return Expanded(
+    child: Container(
+      padding: const EdgeInsets.all(30.0),
+      decoration: _boxDecoration,
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const SizedBox(height: 200.0),
+          SvgPicture.asset(
+            "assets/tinder/tinder_logo.svg",
+            width: 50.0,
+            height: 50.0,
+          ),
+          const SizedBox(
+            height: 100.0,
+          ),
+          _infoText,
+          const SizedBox(
+            height: 20,
+          ),
+          TinderButton(
+            buttonImage: "assets/tinder/apple_logo.svg",
+            buttonTitle: signupWithAppleString,
+            onButtonClicked: () {
+              onClickListener.call("Logar com Apple!!");
+            },
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          TinderButton(
+            buttonImage: "assets/tinder/facebook_logo.svg",
+            buttonTitle: signupWithFacebookString,
+            onButtonClicked: () {
+              onClickListener.call("Logar com facebook!!");
+            },
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          TinderButton(
+            buttonImage: "assets/tinder/dialog.svg",
+            buttonTitle: signupWithPhoneNumberString,
+            onButtonClicked: () {
+              onClickListener.call("Logar com Tinder!!");
+            },
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          _troubleShootingText
+        ],
+      ),
     ),
   );
 }
 
-class TinderScreen extends StatelessWidget {
-  const TinderScreen({Key? key}) : super(key: key);
+class TinderPage extends StatelessWidget {
+  const TinderPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

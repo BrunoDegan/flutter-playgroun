@@ -1,6 +1,8 @@
 import 'package:flutter_playground/routes/constants_router.dart';
 import 'package:flutter/material.dart';
 
+import 'common/strings_constants.dart';
+
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
 
@@ -32,7 +34,7 @@ class MainScreen extends StatelessWidget {
           children: <Widget>[
             HomeButton(
               context: context,
-              buttonText: "Tela Tinder",
+              buttonText: tinderPage,
               onClicked: () {
                 Navigator.of(context).pushNamed(tinderRoute);
               },
@@ -43,7 +45,7 @@ class MainScreen extends StatelessWidget {
             ),
             HomeButton(
               context: context,
-              buttonText: "Tela Money Management",
+              buttonText: moneyPage,
               onClicked: () {
                 Navigator.of(context).pushNamed(moneyRoute);
               },
@@ -54,7 +56,7 @@ class MainScreen extends StatelessWidget {
             // ),
             // HomeButton(
             //   context: context,
-            //   buttonText: "Demo Aula de animações implícitas",
+            //   buttonText: demoAnimImplicitPage,
             //   onClicked: () {
             //     Navigator.of(context).pushNamed(implicitAnimationsDemo);
             //   },
@@ -65,7 +67,7 @@ class MainScreen extends StatelessWidget {
             // ),
             // HomeButton(
             //   context: context,
-            //   buttonText: "Demo Aula de animações controladas",
+            //   buttonText: demoAnimControlledPage,
             //   onClicked: () {
             //     Navigator.of(context).pushNamed(controlledAnimationsDemo);
             //   },
@@ -76,7 +78,7 @@ class MainScreen extends StatelessWidget {
             ),
             HomeButton(
               context: context,
-              buttonText: "Desafio Animações implícitas do botão",
+              buttonText: implicitButtonAnimPage,
               onClicked: () {
                 Navigator.of(context).pushNamed(implicitAnimatedButton);
               },
@@ -87,7 +89,7 @@ class MainScreen extends StatelessWidget {
             ),
             HomeButton(
               context: context,
-              buttonText: "Desafio Animações implicitas da lista",
+              buttonText: implicitListAnimPage,
               onClicked: () {
                 Navigator.of(context).pushNamed(implicitAnimatedList);
               },
@@ -98,7 +100,7 @@ class MainScreen extends StatelessWidget {
             ),
             HomeButton(
               context: context,
-              buttonText: "Desafio Animações controladas do botão",
+              buttonText: controlledButtonAnimPage,
               onClicked: () {
                 Navigator.of(context).pushNamed(controlledAnimatedButton);
               },
@@ -109,11 +111,22 @@ class MainScreen extends StatelessWidget {
             ),
             HomeButton(
               context: context,
-              buttonText: "Desafio Animações controladas da lista",
+              buttonText: controlledListAnimPage,
               onClicked: () {
                 Navigator.of(context).pushNamed(controlledAnimatedList);
               },
-            )
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: 10,
+            ),
+            HomeButton(
+              context: context,
+              buttonText: flutterandoPage,
+              onClicked: () {
+                Navigator.of(context).pushNamed(flutterandoRoute);
+              },
+            ),
           ],
         ),
       ),

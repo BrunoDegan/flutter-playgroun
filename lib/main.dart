@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_playground/animations/controlled/button/controlled_animated_button_page.dart';
 import 'package:flutter_playground/animations/controlled/list/controlled_animated_list_page.dart';
-import 'package:flutter_playground/animations/demo/controlled_animations_screen_demo.dart';
-import 'package:flutter_playground/animations/demo/implicit_animations_screen_demo.dart';
 import 'package:flutter_playground/animations/implicit/button/implicit_animated_button_page.dart';
-import 'package:flutter_playground/money_screen/money_screen.dart';
+import 'package:flutter_playground/flutterando_screen/flutterando_main_page.dart';
+import 'package:flutter_playground/flutterando_screen/splash/flutterando_splash_page.dart';
+import 'package:flutter_playground/money_screen/money_page.dart';
 import 'package:flutter_playground/routes/constants_router.dart';
-import 'package:flutter_playground/tinder_screen/tinder_screen.dart';
+import 'package:flutter_playground/tinder_screen/tinder_page.dart';
 
 import 'animations/implicit/list/implicit_animated_list_page.dart';
 import 'main_screen.dart';
@@ -28,8 +28,8 @@ class MyApp extends StatelessWidget {
         initialRoute: homeRoute,
         home: const MainScreen(),
         routes: {
-          tinderRoute: (context) => const TinderScreen(),
-          moneyRoute: (context) => const MoneyScreen(),
+          tinderRoute: (context) => const TinderPage(),
+          moneyRoute: (context) => const MoneyPage(),
           implicitAnimatedButton: (context) =>
               const ImplicitAnimatedButtonPage(),
           implicitAnimatedList: (context) => const ImplicitAnimatedListPage(),
@@ -41,6 +41,8 @@ class MyApp extends StatelessWidget {
               const ControlledAnimatedButtonPage(),
           controlledAnimatedList: (context) =>
               const ControlledAnimatedListPage(),
+          flutterandoRoute: (context) => const FlutterandoSplashPage(),
+          flutterandoProjectList: (context) => const FlutterandoMainPage()
         });
   }
 }

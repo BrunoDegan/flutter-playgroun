@@ -36,9 +36,8 @@ class _ControlledAnimatedListPage extends State<ControlledAnimatedListPage> {
       ),
       body: ListView.builder(
         itemCount: _listData.length,
-        itemBuilder: (context, index) {
-          return ControlledAnimatedListTile(animationData: _listData[index]);
-        },
+        itemBuilder: (context, index) =>
+            ControlledAnimatedListTile(animationData: _listData[index]),
       ),
     );
   }

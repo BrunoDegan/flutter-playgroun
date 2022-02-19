@@ -46,9 +46,9 @@ class TinderButton extends StatelessWidget {
                 style: const TextStyle(
                   decoration: TextDecoration.none,
                   color: Colors.white,
-                  fontWeight: FontWeight.w100,
+                  fontWeight: FontWeight.w400,
                   wordSpacing: 1.5,
-                  letterSpacing: 1.0,
+                  letterSpacing: 2.0,
                   fontSize: 14.0,
                 ),
               ),

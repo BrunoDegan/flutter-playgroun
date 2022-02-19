@@ -65,6 +65,7 @@ flutter:
   assets:
     - assets/tinder/
     - assets/money/
+    - assets/flutterando_screen/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -80,13 +81,14 @@ flutter:
   fonts:
     - family: Roboto
       fonts:
-        - asset: fonts/Roboto-Black.ttf
-        - asset: fonts/Roboto-BlackItalic.ttf
-        - asset: fonts/Roboto-Bold.ttf
-        - asset: fonts/Roboto-BoldItalic.ttf
-        - asset: fonts/Roboto-Italic.ttf
-        - asset: fonts/Roboto-Black.ttf
-        - asset: fonts/Roboto-Regular.ttf
         - asset: fonts/Roboto-Medium.ttf
+        - asset: fonts/Montserrat.ttf
+        - asset: fonts/Poppins-Medium.ttf
+        - asset: fonts/Poppins-Black.ttf
+        - asset: fonts/Poppins-Light.ttf
+        - asset: fonts/Poppins-Regular.ttf
+        - asset: fonts/Poppins-SemiBold.ttf
+        - asset: fonts/Poppins-Italic.ttf
+        - asset: fonts/Poppins-Bold.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
