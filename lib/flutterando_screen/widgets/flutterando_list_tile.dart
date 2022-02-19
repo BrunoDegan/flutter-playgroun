@@ -9,23 +9,27 @@ class FlutterandoListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
-      elevation: 2.0,
-      child: Container(
-        height: 220.0,
-        width: 400.0,
-        color: const Color(0xFF172026),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            _topCardView(),
-            const Spacer(),
-            _bodyCardView(),
-            const Spacer(),
-            // _bottomCardView(),
-          ],
+    return ClipRRect(
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      borderRadius: const BorderRadius.all(
+        Radius.circular(40.0),
+      ),
+      child: Card(
+        elevation: 2.0,
+        child: Container(
+          height: 220.0,
+          width: 400.0,
+          color: const Color(0xFF172026),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              _topCardView(),
+              const Spacer(),
+              _bodyCardView(),
+              const Spacer(),
+              _bottomCardView(),
+            ],
+          ),
         ),
       ),
     );
@@ -76,46 +80,57 @@ class FlutterandoListTile extends StatelessWidget {
     );
   }
 
-  _bodyCardView() {
-    return getFlutterandoCardBodyTextFormatted(
-      bodyInfo: item.subtitle,
-    );
-  }
-
-  _seeMoreButton() => Container(
-        width: 119.0,
-        height: 34.5,
-        decoration: BoxDecoration(
-          color: const Color(0xFF055AA3),
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        child: const Text(
-          flutterandoSeeMoreInfo,
-          style: TextStyle(
-              color: Color(0xFFEDF4F8),
-              fontSize: 12,
-              fontFamily: "Poppins-SemiBold"),
+  _bodyCardView() => Align(
+        alignment: Alignment.centerLeft,
+        child: Padding(
+          padding: const EdgeInsets.only(left: 10, right: 10),
+          child: getFlutterandoCardBodyTextFormatted(
+            bodyInfo: item.subtitle,
+          ),
         ),
       );
 
-  _bottomCardView() {
-    Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(
-            left: 14.0,
-            right: 4.5,
+  _seeMoreButton(Function onSeeMoreButtonClicked) => GestureDetector(
+        child: Container(
+          width: 119.0,
+          height: 34.5,
+          decoration: BoxDecoration(
+            color: const Color(0xFF055AA3),
+            borderRadius: BorderRadius.circular(20.0),
           ),
-          child: Image.asset("assets/flutterando_screen/github_icon.png"),
+          child: const Center(
+            child: Text(
+              flutterandoSeeMoreInfo,
+              style: TextStyle(
+                  color: Color(0xFFEDF4F8),
+                  fontSize: 12,
+                  fontFamily: "Poppins-SemiBold"),
+            ),
+          ),
         ),
-        const Text(
-          flutterandoCodeSource,
-          style: TextStyle(
-              color: Color(0xFFEDF4F8), fontSize: 12, fontFamily: "Montserrat"),
-        ),
-        _seeMoreButton(),
-      ],
-    );
-  }
+        onTap: () => onSeeMoreButtonClicked.call(),
+      );
+
+  _bottomCardView() => Row(
+        children: [
+          Padding(
+              padding: const EdgeInsets.only(left: 18, right: 4, bottom: 29),
+              child: Image.asset("assets/flutterando_screen/github_icon.png")),
+          const Padding(
+            padding: EdgeInsets.only(left: 4, bottom: 30),
+            child: Text(
+              flutterandoCodeSource,
+              style: TextStyle(
+                  color: Color(0xFFEDF4F8),
+                  fontSize: 12,
+                  fontFamily: "Montserrat"),
+            ),
+          ),
+          const Spacer(),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 35, right: 10),
+            child: _seeMoreButton(() => {}),
+          ),
+        ],
+      );
 }

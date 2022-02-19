@@ -52,18 +52,29 @@ getFlutterandoHeaderSubTitleStyle({required String headerSubtitle}) {
 
 getFlutterandoCounterFormatted({required String counterText}) {
   return RichText(
-    text: TextSpan(children: <TextSpan>[
-      const TextSpan(
-        text: flutterandoExercisesCounterTitles,
-        style: TextStyle(
-            color: Color(0x0051565A), fontSize: 12, fontFamily: "Montserrat"),
-      ),
-      TextSpan(
-        text: counterText,
-        style: const TextStyle(
-            color: Colors.white, fontSize: 12, fontFamily: "Poppins-Medium"),
-      )
-    ]),
+    textScaleFactor: 1.2,
+    textAlign: TextAlign.center,
+    maxLines: 1,
+    text: TextSpan(
+      children: <TextSpan>[
+        const TextSpan(
+          text: flutterandoExercisesCounterTitles,
+          style: TextStyle(
+            color: Color(0xFF51565A),
+            fontSize: 12,
+            fontFamily: "Montserrat",
+          ),
+        ),
+        TextSpan(
+          text: counterText,
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 12,
+            fontFamily: "Poppins-Medium",
+          ),
+        )
+      ],
+    ),
   );
 }
 
@@ -73,7 +84,7 @@ getFlutterandoCardBodyTextFormatted({required String bodyInfo}) {
     style: const TextStyle(
       fontSize: 14.0,
       fontFamily: "Roboto-Regular",
-      color: Color(0x0051565A),
+      color: Color(0xFF51565A),
     ),
   );
 }
