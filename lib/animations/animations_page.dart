@@ -11,6 +11,11 @@ class AnimationsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(animationsPage),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios),
+          tooltip: 'Voltar',
+          onPressed: () => Navigator.pop(context),
+        ),
       ),
       body: Center(
         child: ListView(

@@ -3,12 +3,22 @@ import 'package:flutter_playground/common/strings_constants.dart';
 import 'package:flutter_playground/common/text_formatter.dart';
 import 'package:flutter_playground/flutterando_screen/data/flutterando_item.dart';
 
-class FlutterandoListTile extends StatelessWidget {
+class FlutterandoListTile extends StatefulWidget {
   final FlutterandoItem item;
   final Function onCardClicked;
+
   const FlutterandoListTile(
       {Key? key, required this.item, required this.onCardClicked})
       : super(key: key);
+
+  @override
+  State<StatefulWidget> createState() => _FlutterandoListTileState();
+}
+
+class _FlutterandoListTileState extends State<FlutterandoListTile> {
+  final Duration _duration = const Duration(milliseconds: 100);
+  final Curve _curve = Curves.linear;
+  bool _isPressed = false;
 
   @override
   Widget build(BuildContext context) {
@@ -50,12 +60,12 @@ class FlutterandoListTile extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 15.0),
             child: getFlutterandoHeaderTitleStyle(
-              headerTitle: item.title,
+              headerTitle: widget.item.title,
             ),
           ),
           const Spacer(),
           getFlutterandoCounterFormatted(
-            counterText: item.counter.toString(),
+            counterText: widget.item.counter.toString(),
           ),
         ],
       ),
@@ -74,7 +84,7 @@ class FlutterandoListTile extends StatelessWidget {
         padding: const EdgeInsets.all(3),
         child: Center(
           child: Image.asset(
-            item.imageUrl,
+            widget.item.imageUrl,
             width: 43.0,
             height: 43.0,
           ),
@@ -88,31 +98,41 @@ class FlutterandoListTile extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.only(left: 10, right: 10),
           child: getFlutterandoCardBodyTextFormatted(
-            bodyInfo: item.subtitle,
+            bodyInfo: widget.item.subtitle,
           ),
         ),
       );
 
-  _seeMoreButton() => GestureDetector(
-        child: Container(
-          width: 119.0,
-          height: 34.5,
-          decoration: BoxDecoration(
-            color: const Color(0xFF055AA3),
+  _seeMoreButton() {
+    return ElevatedButton(
+      child: const Text(flutterandoSeeMoreInfo),
+      style: ButtonStyle(
+        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20.0),
           ),
-          child: const Center(
-            child: Text(
-              flutterandoSeeMoreInfo,
-              style: TextStyle(
-                  color: Color(0xFFEDF4F8),
-                  fontSize: 12,
-                  fontFamily: "Poppins-SemiBold"),
-            ),
-          ),
         ),
-        onTap: () => onCardClicked.call(),
-      );
+        textStyle: MaterialStateProperty.all<TextStyle>(
+          const TextStyle(
+              color: Color(0xFFEDF4F8),
+              fontSize: 12,
+              fontFamily: "Poppins-SemiBold"),
+        ),
+        backgroundColor: _isPressed
+            ? MaterialStateProperty.all(const Color.fromARGB(255, 5, 45, 80))
+            : MaterialStateProperty.all(const Color(0xFF055AA3)),
+        minimumSize: MaterialStateProperty.all(
+          const Size(119.0, 34.5),
+        ),
+      ),
+      onPressed: () {
+        _isPressed = !_isPressed;
+        Future.delayed(_duration, () {
+          widget.onCardClicked.call();
+        });
+      },
+    );
+  }
 
   _bottomCardView() => Row(
         children: [
@@ -120,7 +140,7 @@ class FlutterandoListTile extends StatelessWidget {
               padding: const EdgeInsets.only(left: 18, right: 4, bottom: 29),
               child: Image.asset("assets/flutterando_screen/github_icon.png")),
           const Padding(
-            padding: EdgeInsets.only(left: 4, bottom: 30),
+            padding: EdgeInsets.only(left: 4, bottom: 25),
             child: Text(
               flutterandoCodeSource,
               style: TextStyle(
@@ -131,7 +151,7 @@ class FlutterandoListTile extends StatelessWidget {
           ),
           const Spacer(),
           Padding(
-            padding: const EdgeInsets.only(bottom: 35, right: 10),
+            padding: const EdgeInsets.only(bottom: 25, right: 10),
             child: _seeMoreButton(),
           ),
         ],

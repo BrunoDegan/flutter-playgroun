@@ -10,5 +10,5 @@ List<FlutterandoItem> flutterandoItens = [
   FlutterandoItem("assets/flutterando_screen/leitura_mockup_icon.png",
       flutterandoMockupRead, flutterandoSubtitle2, 2),
   FlutterandoItem("assets/flutterando_screen/playground_icon.png",
-      flutterandoPlayground, flutterandoSubtitle3, 3),
+      flutterandoPlayground, flutterandoSubtitle3, 2),
 ];
