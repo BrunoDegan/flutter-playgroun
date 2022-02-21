@@ -3,6 +3,7 @@ import 'package:flutter_playground/common/list_constants.dart';
 import 'package:flutter_playground/common/strings_constants.dart';
 import 'package:flutter_playground/flutterando_screen/widgets/flutterando_list_tile.dart';
 import 'package:flutter_playground/flutterando_screen/widgets/flutterando_top_bar_widget.dart';
+import 'package:flutter_playground/routes/constants_router.dart';
 
 class FlutterandoMainPage extends StatefulWidget {
   const FlutterandoMainPage({Key? key}) : super(key: key);
@@ -35,9 +36,12 @@ class _FlutterandoMainPageState extends State<FlutterandoMainPage> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           _createBottomSheetButton(
-              imagePath: "assets/flutterando_screen/activities_icon.png",
-              buttonTextTitle: flutterandoBottomsheetTitle1,
-              onClicked: () {}),
+            imagePath: "assets/flutterando_screen/activities_icon.png",
+            buttonTextTitle: flutterandoBottomsheetTitle1,
+            onClicked: () {
+              //TODO criar as outras paginas do bottom navigator
+            },
+          ),
           Container(
             color: Colors.white,
             width: 0.5,
@@ -46,7 +50,9 @@ class _FlutterandoMainPageState extends State<FlutterandoMainPage> {
           _createBottomSheetButton(
             imagePath: "assets/flutterando_screen/github_icon.png",
             buttonTextTitle: flutterandoBottomsheetTitle2,
-            onClicked: () {},
+            onClicked: () {
+              //TODO criar as outras paginas do bottom navigator
+            },
           ),
           Container(
             color: Colors.white,
@@ -56,7 +62,9 @@ class _FlutterandoMainPageState extends State<FlutterandoMainPage> {
           _createBottomSheetButton(
             materialIcon: Icons.person,
             buttonTextTitle: flutterandoBottomsheetTitle3,
-            onClicked: () {},
+            onClicked: () {
+              //TODO criar as outras paginas do bottom navigator
+            },
           )
         ],
       ),
@@ -67,7 +75,7 @@ class _FlutterandoMainPageState extends State<FlutterandoMainPage> {
       {required String buttonTextTitle,
       String? imagePath,
       IconData? materialIcon,
-      required Function() onClicked}) {
+      required Function onClicked}) {
     return ElevatedButton(
       style: ButtonStyle(
         backgroundColor:
@@ -103,6 +111,22 @@ class _FlutterandoMainPageState extends State<FlutterandoMainPage> {
     }
   }
 
+  _handleScreenFlow(int index) {
+    switch (index) {
+      case 0:
+        Navigator.of(context).pushNamed(animationsRoute);
+        break;
+      case 1:
+        Navigator.of(context).pushNamed(mockupRoute);
+        break;
+      case 2:
+        Navigator.of(context).pushNamed(playgroundRoute);
+        break;
+      default:
+        Navigator.of(context).pushNamed(splashRoute);
+    }
+  }
+
   _contentBody() {
     return Container(
       width: MediaQuery.of(context).size.width,
@@ -117,7 +141,12 @@ class _FlutterandoMainPageState extends State<FlutterandoMainPage> {
       child: ListView.builder(
         itemCount: flutterandoItens.length,
         itemBuilder: (context, index) {
-          return FlutterandoListTile(item: flutterandoItens[index]);
+          return FlutterandoListTile(
+            item: flutterandoItens[index],
+            onCardClicked: () {
+              _handleScreenFlow(index);
+            },
+          );
         },
       ),
     );

@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_playground/animations/animations_page.dart';
 import 'package:flutter_playground/animations/controlled/button/controlled_animated_button_page.dart';
 import 'package:flutter_playground/animations/controlled/list/controlled_animated_list_page.dart';
+import 'package:flutter_playground/animations/demo/controlled_animations_screen_demo.dart';
+import 'package:flutter_playground/animations/demo/implicit_animations_screen_demo.dart';
 import 'package:flutter_playground/animations/implicit/button/implicit_animated_button_page.dart';
 import 'package:flutter_playground/flutterando_screen/flutterando_main_page.dart';
 import 'package:flutter_playground/flutterando_screen/splash/flutterando_splash_page.dart';
-import 'package:flutter_playground/money_screen/money_page.dart';
+import 'package:flutter_playground/mockup/mockup_page.dart';
+import 'package:flutter_playground/mockup/money_screen/money_page.dart';
+import 'package:flutter_playground/mockup/tinder_screen/tinder_page.dart';
+import 'package:flutter_playground/playground/playground_screen.dart';
 import 'package:flutter_playground/routes/constants_router.dart';
-import 'package:flutter_playground/tinder_screen/tinder_page.dart';
-
 import 'animations/implicit/list/implicit_animated_list_page.dart';
-import 'main_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,27 +25,28 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Playground',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(primarySwatch: Colors.blue, fontFamily: 'Roboto'),
-        initialRoute: homeRoute,
-        home: const MainScreen(),
+        initialRoute: splashRoute,
+        home: const FlutterandoSplashPage(),
         routes: {
+          mainRoute: (context) => const FlutterandoMainPage(),
+          playgroundRoute: (context) => const PlaygroundScreen(),
+          mockupRoute: (context) => const MockupPage(),
           tinderRoute: (context) => const TinderPage(),
           moneyRoute: (context) => const MoneyPage(),
+          animationsRoute: (context) => const AnimationsPage(),
           implicitAnimatedButton: (context) =>
               const ImplicitAnimatedButtonPage(),
           implicitAnimatedList: (context) => const ImplicitAnimatedListPage(),
-          // implicitAnimationsDemo: (context) =>
-          //     const ImplicitAnimationPageDemo(),
-          // controlledAnimationsDemo: (context) =>
-          //     const ControlledAnimationsPageDemo(),
+          implicitAnimationsDemo: (context) =>
+              const ImplicitAnimationPageDemo(),
+          controlledAnimationsDemo: (context) =>
+              const ControlledAnimationsPageDemo(),
           controlledAnimatedButton: (context) =>
               const ControlledAnimatedButtonPage(),
           controlledAnimatedList: (context) =>
               const ControlledAnimatedListPage(),
-          flutterandoRoute: (context) => const FlutterandoSplashPage(),
-          flutterandoProjectList: (context) => const FlutterandoMainPage()
         });
   }
 }

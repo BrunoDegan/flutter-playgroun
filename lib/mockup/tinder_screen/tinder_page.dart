@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_playground/common/text_formatter.dart';
-import 'package:flutter_playground/tinder_screen/tinder_strings.dart';
-import 'package:flutter_playground/tinder_screen/tinder_button.dart';
+import 'package:flutter_playground/mockup/tinder_screen/tinder_button.dart';
+import 'package:flutter_playground/mockup/tinder_screen/tinder_strings.dart';
 import 'package:flutter_svg/svg.dart';
 
 final List<Color> _backgroundLinearGradient = [

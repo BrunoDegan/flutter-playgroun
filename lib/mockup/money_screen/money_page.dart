@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_playground/common/text_formatter.dart';
-import 'package:flutter_playground/money_screen/money_button.dart';
-import 'package:flutter_playground/money_screen/money_strings.dart';
+import 'package:flutter_playground/mockup/money_screen/money_button.dart';
+import 'package:flutter_playground/mockup/money_screen/money_strings.dart';
 
 class MoneyPage extends StatelessWidget {
   const MoneyPage({Key? key}) : super(key: key);

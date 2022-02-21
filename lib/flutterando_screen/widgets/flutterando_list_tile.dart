@@ -5,7 +5,10 @@ import 'package:flutter_playground/flutterando_screen/data/flutterando_item.dart
 
 class FlutterandoListTile extends StatelessWidget {
   final FlutterandoItem item;
-  const FlutterandoListTile({Key? key, required this.item}) : super(key: key);
+  final Function onCardClicked;
+  const FlutterandoListTile(
+      {Key? key, required this.item, required this.onCardClicked})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -90,7 +93,7 @@ class FlutterandoListTile extends StatelessWidget {
         ),
       );
 
-  _seeMoreButton(Function onSeeMoreButtonClicked) => GestureDetector(
+  _seeMoreButton() => GestureDetector(
         child: Container(
           width: 119.0,
           height: 34.5,
@@ -108,7 +111,7 @@ class FlutterandoListTile extends StatelessWidget {
             ),
           ),
         ),
-        onTap: () => onSeeMoreButtonClicked.call(),
+        onTap: () => onCardClicked.call(),
       );
 
   _bottomCardView() => Row(
@@ -129,7 +132,7 @@ class FlutterandoListTile extends StatelessWidget {
           const Spacer(),
           Padding(
             padding: const EdgeInsets.only(bottom: 35, right: 10),
-            child: _seeMoreButton(() => {}),
+            child: _seeMoreButton(),
           ),
         ],
       );

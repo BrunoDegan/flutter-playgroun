@@ -1,6 +1,7 @@
 // Desafio Mockup
 const tinderPage = "Tela Tinder";
 const moneyPage = "Tela Money Management";
+const animationsPage = "Animations Playground";
 
 // Desafio Animações
 const demoAnimImplicitPage = "Demo Aula de animações implícitas";
