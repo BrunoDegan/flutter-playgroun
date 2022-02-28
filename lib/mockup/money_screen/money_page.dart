@@ -83,24 +83,28 @@ class MoneyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black,
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.transparent,
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios),
-            tooltip: 'Voltar',
-            onPressed: () => Navigator.pop(context),
-          ),
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios),
+          tooltip: 'Voltar',
+          onPressed: () => Navigator.pop(context),
         ),
-        body: Container(
-            padding: const EdgeInsets.all(80.0),
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
-            child: mainContent((info) {
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                  content: Text(info), duration: const Duration(seconds: 1)));
-            })));
+      ),
+      body: Container(
+        padding: const EdgeInsets.all(80.0),
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        child: mainContent(
+          (info) {
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text(info), duration: const Duration(seconds: 1)));
+          },
+        ),
+      ),
+    );
   }
 
   RichText _formatSubtitle() {

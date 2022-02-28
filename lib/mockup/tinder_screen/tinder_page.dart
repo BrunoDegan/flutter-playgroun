@@ -22,8 +22,16 @@ final BoxDecoration _boxDecoration = BoxDecoration(
 Widget _troubleShootingText(BuildContext context) {
   return Center(
     child: GestureDetector(
-      child: Text("Trouble Signing In?",
-          style: Theme.of(context).textTheme.bodyText1),
+      child: const Text(
+        "Trouble Signing In?",
+        style: TextStyle(
+            fontWeight: FontWeight.normal,
+            decoration: TextDecoration.none,
+            backgroundColor: Colors.transparent,
+            color: Colors.white,
+            fontStyle: FontStyle.normal,
+            fontSize: 15.0),
+      ),
       onTap: () => {},
     ),
   );
