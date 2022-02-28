@@ -11,6 +11,22 @@ class AnimationsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(animationsPage),
+        actions: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(right: 24.0),
+            child: GestureDetector(
+              onTap: () {
+                //TODO CHANGE THEME
+              },
+              child: Image.asset(
+                "assets/flutterando_screen/moon.png",
+                width: 22.0,
+                height: 24.0,
+                alignment: Alignment.centerRight,
+              ),
+            ),
+          )
+        ],
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios),
           tooltip: 'Voltar',
@@ -28,6 +44,7 @@ class AnimationsPage extends StatelessWidget {
             HomeButton(
               context: context,
               buttonText: implicitButtonAnimPage,
+              exerciseNumber: 1,
               onClicked: () {
                 Navigator.of(context).pushNamed(implicitAnimatedButton);
               },
@@ -39,6 +56,7 @@ class AnimationsPage extends StatelessWidget {
             HomeButton(
               context: context,
               buttonText: implicitListAnimPage,
+              exerciseNumber: 2,
               onClicked: () {
                 Navigator.of(context).pushNamed(implicitAnimatedList);
               },
@@ -50,6 +68,7 @@ class AnimationsPage extends StatelessWidget {
             HomeButton(
               context: context,
               buttonText: controlledButtonAnimPage,
+              exerciseNumber: 3,
               onClicked: () {
                 Navigator.of(context).pushNamed(controlledAnimatedButton);
               },
@@ -61,6 +80,7 @@ class AnimationsPage extends StatelessWidget {
             HomeButton(
               context: context,
               buttonText: controlledListAnimPage,
+              exerciseNumber: 4,
               onClicked: () {
                 Navigator.of(context).pushNamed(controlledAnimatedList);
               },

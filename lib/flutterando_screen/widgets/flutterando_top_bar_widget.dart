@@ -38,6 +38,8 @@ class FlutterandoTopBarWidget extends StatelessWidget {
             IconButton(
               icon: Image.asset(
                 "assets/flutterando_screen/moon.png",
+                width: 22.0,
+                height: 24.0,
                 alignment: Alignment.centerRight,
               ),
               onPressed: () {

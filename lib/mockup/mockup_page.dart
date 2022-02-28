@@ -15,7 +15,23 @@ class MockupPage extends StatelessWidget {
           tooltip: 'Voltar',
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(animationsPage),
+        title: const Text(flutterandoMockupRead),
+        actions: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(right: 24.0),
+            child: GestureDetector(
+              onTap: () {
+                //TODO CHANGE THEME
+              },
+              child: Image.asset(
+                "assets/flutterando_screen/moon.png",
+                alignment: Alignment.centerRight,
+                width: 22.0,
+                height: 24.0,
+              ),
+            ),
+          )
+        ],
       ),
       body: Center(
         child: ListView(
@@ -28,6 +44,7 @@ class MockupPage extends StatelessWidget {
             HomeButton(
               context: context,
               buttonText: tinderPage,
+              exerciseNumber: 1,
               onClicked: () {
                 Navigator.of(context).pushNamed(tinderRoute);
               },
@@ -39,6 +56,7 @@ class MockupPage extends StatelessWidget {
             HomeButton(
               context: context,
               buttonText: moneyPage,
+              exerciseNumber: 2,
               onClicked: () {
                 Navigator.of(context).pushNamed(moneyRoute);
               },

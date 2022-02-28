@@ -6,6 +6,7 @@ const String moneyRoute = "money_route";
 const String animationsRoute = "animations_route";
 const String mockupRoute = "mockup_route";
 const String playgroundRoute = "playground_route";
+const String aboutRoute = "about_route";
 
 //Animation Demo routes
 const String implicitAnimationsDemo = "implicit_animations_demo";

@@ -20,6 +20,7 @@ class PlaygroundScreen extends StatelessWidget {
             HomeButton(
               context: context,
               buttonText: demoAnimImplicitPage,
+              exerciseNumber: 1,
               onClicked: () {
                 Navigator.of(context).pushNamed(implicitAnimationsDemo);
               },
@@ -31,6 +32,7 @@ class PlaygroundScreen extends StatelessWidget {
             HomeButton(
               context: context,
               buttonText: demoAnimControlledPage,
+              exerciseNumber: 2,
               onClicked: () {
                 Navigator.of(context).pushNamed(controlledAnimationsDemo);
               },

@@ -33,6 +33,22 @@ class _ControlledAnimatedListPage extends State<ControlledAnimatedListPage> {
             Navigator.of(context).pop();
           },
         ),
+        actions: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(right: 24.0),
+            child: GestureDetector(
+              onTap: () {
+                //TODO CHANGE THEME
+              },
+              child: Image.asset(
+                "assets/flutterando_screen/moon.png",
+                alignment: Alignment.centerRight,
+                width: 22.0,
+                height: 24.0,
+              ),
+            ),
+          )
+        ],
       ),
       body: ListView.builder(
         itemCount: _listData.length,

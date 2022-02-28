@@ -19,20 +19,15 @@ final BoxDecoration _boxDecoration = BoxDecoration(
   ),
 );
 
-Widget _troubleShootingText = Center(
-  child: GestureDetector(
-      child: const Text(
-        "Trouble Signing In?",
-        style: TextStyle(
-            fontWeight: FontWeight.normal,
-            decoration: TextDecoration.none,
-            backgroundColor: Colors.transparent,
-            color: Colors.white,
-            fontStyle: FontStyle.normal,
-            fontSize: 15.0),
-      ),
-      onTap: () => {}),
-);
+Widget _troubleShootingText(BuildContext context) {
+  return Center(
+    child: GestureDetector(
+      child: Text("Trouble Signing In?",
+          style: Theme.of(context).textTheme.bodyText1),
+      onTap: () => {},
+    ),
+  );
+}
 
 Widget _infoText = Container(
   margin: const EdgeInsets.all(20.0),
@@ -126,7 +121,7 @@ Widget mainContent(BuildContext context, Function(String) onClickListener) {
           const SizedBox(
             height: 20,
           ),
-          _troubleShootingText
+          _troubleShootingText(context)
         ],
       ),
     ),

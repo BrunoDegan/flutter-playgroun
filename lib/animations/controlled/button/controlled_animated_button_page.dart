@@ -81,6 +81,22 @@ class _ControlledAnimatedButtonPageState
       appBar: AppBar(
         centerTitle: true,
         title: const Text("Desafio Animação controlada - Botão"),
+        actions: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(right: 24.0),
+            child: GestureDetector(
+              onTap: () {
+                //TODO CHANGE THEME
+              },
+              child: Image.asset(
+                "assets/flutterando_screen/moon.png",
+                alignment: Alignment.centerRight,
+                width: 22.0,
+                height: 24.0,
+              ),
+            ),
+          )
+        ],
         leading: IconButton(
           tooltip: 'Voltar',
           icon: const Icon(Icons.arrow_back_ios),

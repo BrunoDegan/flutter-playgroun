@@ -5,6 +5,7 @@ import 'package:flutter_playground/animations/controlled/list/controlled_animate
 import 'package:flutter_playground/animations/demo/controlled_animations_screen_demo.dart';
 import 'package:flutter_playground/animations/demo/implicit_animations_screen_demo.dart';
 import 'package:flutter_playground/animations/implicit/button/implicit_animated_button_page.dart';
+import 'package:flutter_playground/flutterando_screen/about/flutterando_about_main_page.dart';
 import 'package:flutter_playground/flutterando_screen/flutterando_main_page.dart';
 import 'package:flutter_playground/flutterando_screen/splash/flutterando_splash_page.dart';
 import 'package:flutter_playground/mockup/mockup_page.dart';
@@ -26,7 +27,6 @@ class FlutterandoApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue, fontFamily: 'Roboto'),
       initialRoute: splashRoute,
       home: const FlutterandoSplashPage(),
       routes: {
@@ -44,6 +44,7 @@ class FlutterandoApp extends StatelessWidget {
         controlledAnimatedButton: (context) =>
             const ControlledAnimatedButtonPage(),
         controlledAnimatedList: (context) => const ControlledAnimatedListPage(),
+        aboutRoute: (context) => const FlutterandoAboutPage()
       },
     );
   }

@@ -20,6 +20,22 @@ class _ImplicitAnimatedButtonState extends State<ImplicitAnimatedButtonPage> {
       appBar: AppBar(
         centerTitle: true,
         title: const Text("Desafio Animação implicita - Botão flutuante"),
+        actions: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(right: 24.0),
+            child: GestureDetector(
+              onTap: () {
+                //TODO CHANGE THEME
+              },
+              child: Image.asset(
+                "assets/flutterando_screen/moon.png",
+                alignment: Alignment.centerRight,
+                width: 22.0,
+                height: 24.0,
+              ),
+            ),
+          )
+        ],
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios),
           tooltip: 'Voltar',

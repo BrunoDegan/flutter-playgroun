@@ -19,7 +19,9 @@ class _FlutterandoMainPageState extends State<FlutterandoMainPage> {
       body: Stack(
         children: [
           _contentBody(),
-          FlutterandoTopBarWidget(onTopBarButtonClickListener: () {}),
+          FlutterandoTopBarWidget(onTopBarButtonClickListener: () {
+            //TODO
+          }),
         ],
       ),
       bottomNavigationBar:
@@ -63,7 +65,7 @@ class _FlutterandoMainPageState extends State<FlutterandoMainPage> {
             materialIcon: Icons.person,
             buttonTextTitle: flutterandoBottomsheetTitle3,
             onClicked: () {
-              //TODO criar as outras paginas do bottom navigator
+              Navigator.of(context).pushNamed(aboutRoute);
             },
           )
         ],
