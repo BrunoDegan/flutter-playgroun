@@ -52,7 +52,6 @@ getFlutterandoHeaderSubTitleStyle({required String headerSubtitle}) {
 
 getFlutterandoCounterFormatted({required String counterText}) {
   return RichText(
-    textScaleFactor: 1.2,
     textAlign: TextAlign.center,
     maxLines: 1,
     text: TextSpan(

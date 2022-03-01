@@ -4,12 +4,12 @@ const moneyPage = "Tela Money Management";
 const animationsPage = "Animations Playground";
 
 // Desafio Animações
-const demoAnimImplicitPage = "Demo Aula de animações implícitas";
-const demoAnimControlledPage = "Demo Aula de animações controladas";
-const implicitButtonAnimPage = "Desafio Animações implícitas do botão";
-const implicitListAnimPage = "Desafio Animações implicitas da lista";
-const controlledButtonAnimPage = "Desafio Animações controladas do botão";
-const controlledListAnimPage = "Desafio Animações controladas da lista";
+const demoAnimImplicitPage = "Aula de animações implícitas";
+const demoAnimControlledPage = "Aula de animações controladas";
+const implicitButtonAnimPage = "Animações implícitas do botão";
+const implicitListAnimPage = "Animações implicitas da lista";
+const controlledButtonAnimPage = "Animações controladas do botão";
+const controlledListAnimPage = "Animações controladas da lista";
 
 // Desafio Pagina Github
 const flutterandoPage = "Desafio Flutterando Page";

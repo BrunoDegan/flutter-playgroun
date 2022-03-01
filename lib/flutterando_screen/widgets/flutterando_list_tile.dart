@@ -22,27 +22,30 @@ class _FlutterandoListTileState extends State<FlutterandoListTile> {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      clipBehavior: Clip.antiAliasWithSaveLayer,
-      borderRadius: const BorderRadius.all(
-        Radius.circular(40.0),
+    return Card(
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(10.0),
+        ),
+        side: BorderSide(
+          width: 0.5,
+          color: Colors.white,
+        ),
       ),
-      child: Card(
-        elevation: 2.0,
-        child: Container(
-          height: 220.0,
-          width: 400.0,
-          color: const Color(0xFF172026),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              _topCardView(),
-              const Spacer(),
-              _bodyCardView(),
-              const Spacer(),
-              _bottomCardView(),
-            ],
-          ),
+      elevation: 2.0,
+      child: Container(
+        height: 220.0,
+        width: 400.0,
+        color: const Color(0xFF172026),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            _topCardView(),
+            const Spacer(),
+            _bodyCardView(),
+            const Spacer(),
+            _bottomCardView(),
+          ],
         ),
       ),
     );

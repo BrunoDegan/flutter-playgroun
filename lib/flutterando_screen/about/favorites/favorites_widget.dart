@@ -10,23 +10,35 @@ class FavoritesWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height,
-      child: Column(
-        children: [
-          const Padding(
-            padding: EdgeInsets.only(bottom: 8.0),
-            child: Text(FAVORITE_TECHNOLOGIES),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        const Padding(
+          padding: EdgeInsets.only(left: 14, bottom: 8.0),
+          child: Text(
+            FAVORITE_TECHNOLOGIES,
+            style: TextStyle(
+              fontWeight: FontWeight.w400,
+              fontSize: 14.0,
+              fontFamily: "Poppins-Medium",
+              color: Color(0xFFEDF4F8),
+            ),
           ),
-          ListView.builder(
+        ),
+        SizedBox(
+          width: MediaQuery.of(context).size.width,
+          height: 120,
+          child: ListView.builder(
+            shrinkWrap: true,
+            physics: const AlwaysScrollableScrollPhysics(),
+            itemCount: data.favorites.length,
             scrollDirection: Axis.horizontal,
-            itemBuilder: (context, pos) {
-              return FavoritesListTile(data: data.favorites[pos]);
+            itemBuilder: (context, index) {
+              return FavoritesListTile(data: data.favorites[index]);
             },
           ),
-        ],
-      ),
+        )
+      ],
     );
   }
 }
