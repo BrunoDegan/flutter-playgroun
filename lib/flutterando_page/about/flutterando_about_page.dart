@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_playground/flutterando_screen/about/profile_info/about_card_widget.dart';
-import 'package:flutter_playground/flutterando_screen/about/datasource/AboutPageDataSource.dart';
-import 'package:flutter_playground/flutterando_screen/about/favorites/favorites_widget.dart';
-import 'package:flutter_playground/flutterando_screen/about/repositories/AboutPageRepository.dart';
-import 'package:flutter_playground/flutterando_screen/about/skills/skills_widget.dart';
-import 'package:flutter_playground/flutterando_screen/widgets/flutterando_top_bar_widget.dart';
+import 'package:flutter_playground/flutterando_page/about/datasource/AboutPageDataSource.dart';
+import 'package:flutter_playground/flutterando_page/about/favorites/favorites_widget.dart';
+import 'package:flutter_playground/flutterando_page/about/profile_info/about_card_widget.dart';
+import 'package:flutter_playground/flutterando_page/about/repositories/AboutPageRepository.dart';
+import 'package:flutter_playground/flutterando_page/about/skills/skills_widget.dart';
+import 'package:flutter_playground/flutterando_page/widgets/flutterando_top_bar_widget.dart';
 
 class FlutterandoAboutPage extends StatefulWidget {
   const FlutterandoAboutPage({Key? key}) : super(key: key);

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_playground/common/strings_constants.dart';
-import 'package:flutter_playground/flutterando_screen/about/flutterando_about_page.dart';
-import 'package:flutter_playground/flutterando_screen/activities/flutterando_main_page.dart';
-import 'package:flutter_playground/flutterando_screen/repositories_screen/RepositoriesPage.dart';
+import 'package:flutter_playground/flutterando_page/about/flutterando_about_page.dart';
+import 'package:flutter_playground/flutterando_page/activities/flutterando_main_page.dart';
+import 'package:flutter_playground/flutterando_page/repositories_screen/RepositoriesPage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

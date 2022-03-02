@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_playground/flutterando_screen/about/data/flutterando_about_data.dart';
+import 'package:flutter_playground/flutterando_page/about/data/flutterando_about_data.dart';
 
 class AboutCardWidget extends StatelessWidget {
   final FlutterandoAboutData data;
