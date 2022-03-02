@@ -20,7 +20,7 @@ class _FlutterandoActivitiesPageState extends State<FlutterandoActivitiesPage> {
         children: [
           _contentBody(),
           FlutterandoTopBarWidget(onTopBarButtonClickListener: () {
-            //TODO
+            //TODO change theme data
           }),
         ],
       ),
@@ -40,6 +40,7 @@ class _FlutterandoActivitiesPageState extends State<FlutterandoActivitiesPage> {
         break;
       default:
         Navigator.of(context).pushNamed(splashRoute);
+        break;
     }
   }
 

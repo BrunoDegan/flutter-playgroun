@@ -18,6 +18,6 @@ class FlutterandoSplashPage extends StatelessWidget {
 
   _splashScreenTimer({required BuildContext context}) {
     Future.delayed(const Duration(seconds: 3))
-        .then((value) => Navigator.of(context).pushNamed(homeRoute));
+        .then((value) => Navigator.of(context).pushReplacementNamed(homeRoute));
   }
 }
