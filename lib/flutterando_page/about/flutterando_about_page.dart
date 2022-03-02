@@ -38,7 +38,7 @@ class _FlutterandoAboutPageState extends State<FlutterandoAboutPage> {
         left: 15.0,
         right: 15.0,
         top: 100.0,
-        bottom: 0.0,
+        bottom: 10.0,
       ),
       color: const Color(0xFF121517),
       width: MediaQuery.of(context).size.width,

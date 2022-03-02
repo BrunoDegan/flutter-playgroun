@@ -52,7 +52,7 @@ class _FlutterandoActivitiesPageState extends State<FlutterandoActivitiesPage> {
         left: 15.0,
         right: 15.0,
         top: 100.0,
-        bottom: 0.0,
+        bottom: 5.0,
       ),
       child: ListView.builder(
         itemCount: flutterandoItens.length,
