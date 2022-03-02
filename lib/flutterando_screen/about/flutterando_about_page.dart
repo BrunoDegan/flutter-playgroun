@@ -4,7 +4,6 @@ import 'package:flutter_playground/flutterando_screen/about/datasource/AboutPage
 import 'package:flutter_playground/flutterando_screen/about/favorites/favorites_widget.dart';
 import 'package:flutter_playground/flutterando_screen/about/repositories/AboutPageRepository.dart';
 import 'package:flutter_playground/flutterando_screen/about/skills/skills_widget.dart';
-import 'package:flutter_playground/flutterando_screen/widgets/flutterando_bottom_sheet.dart';
 import 'package:flutter_playground/flutterando_screen/widgets/flutterando_top_bar_widget.dart';
 
 class FlutterandoAboutPage extends StatefulWidget {
@@ -21,19 +20,15 @@ class _FlutterandoAboutPageState extends State<FlutterandoAboutPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          _bodyWidget(),
-          FlutterandoTopBarWidget(
-            onTopBarButtonClickListener: () {
-              //TODO
-            },
-          ),
-        ],
-      ),
-      bottomNavigationBar:
-          BottomAppBar(elevation: 3, child: bottomButtonNav(context)),
+    return Stack(
+      children: [
+        _bodyWidget(),
+        FlutterandoTopBarWidget(
+          onTopBarButtonClickListener: () {
+            //TODO
+          },
+        ),
+      ],
     );
   }
 

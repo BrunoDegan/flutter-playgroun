@@ -5,8 +5,9 @@ import 'package:flutter_playground/animations/controlled/list/controlled_animate
 import 'package:flutter_playground/animations/demo/controlled_animations_screen_demo.dart';
 import 'package:flutter_playground/animations/demo/implicit_animations_screen_demo.dart';
 import 'package:flutter_playground/animations/implicit/button/implicit_animated_button_page.dart';
-import 'package:flutter_playground/flutterando_screen/about/flutterando_about_main_page.dart';
-import 'package:flutter_playground/flutterando_screen/flutterando_main_page.dart';
+import 'package:flutter_playground/flutterando_screen/about/flutterando_about_page.dart';
+import 'package:flutter_playground/flutterando_screen/activities/flutterando_main_page.dart';
+import 'package:flutter_playground/flutterando_screen/home/home_page.dart';
 import 'package:flutter_playground/flutterando_screen/splash/flutterando_splash_page.dart';
 import 'package:flutter_playground/mockup/mockup_page.dart';
 import 'package:flutter_playground/mockup/money_screen/money_page.dart';
@@ -30,7 +31,7 @@ class FlutterandoApp extends StatelessWidget {
       initialRoute: splashRoute,
       home: const FlutterandoSplashPage(),
       routes: {
-        mainRoute: (context) => const FlutterandoMainPage(),
+        homeRoute: (context) => const HomePage(),
         playgroundRoute: (context) => const PlaygroundScreen(),
         mockupRoute: (context) => const MockupPage(),
         tinderRoute: (context) => const TinderPage(),

@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_playground/common/list_constants.dart';
-import 'package:flutter_playground/flutterando_screen/widgets/flutterando_bottom_sheet.dart';
 import 'package:flutter_playground/flutterando_screen/widgets/flutterando_list_tile.dart';
 import 'package:flutter_playground/flutterando_screen/widgets/flutterando_top_bar_widget.dart';
 import 'package:flutter_playground/routes/constants_router.dart';
 
-class FlutterandoMainPage extends StatefulWidget {
-  const FlutterandoMainPage({Key? key}) : super(key: key);
+class FlutterandoActivitiesPage extends StatefulWidget {
+  const FlutterandoActivitiesPage({Key? key}) : super(key: key);
 
   @override
-  State<FlutterandoMainPage> createState() => _FlutterandoMainPageState();
+  State<FlutterandoActivitiesPage> createState() =>
+      _FlutterandoActivitiesPageState();
 }
 
-class _FlutterandoMainPageState extends State<FlutterandoMainPage> {
+class _FlutterandoActivitiesPageState extends State<FlutterandoActivitiesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,8 +24,6 @@ class _FlutterandoMainPageState extends State<FlutterandoMainPage> {
           }),
         ],
       ),
-      bottomNavigationBar:
-          BottomAppBar(elevation: 3, child: bottomButtonNav(context)),
     );
   }
 

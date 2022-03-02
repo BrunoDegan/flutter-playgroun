@@ -1,6 +1,7 @@
 //Routes
 const String splashRoute = "/";
-const String mainRoute = "main_route";
+const String activitiesRoute = "activities_route";
+const String homeRoute = "home_route";
 const String tinderRoute = "tinder_route";
 const String moneyRoute = "money_route";
 const String animationsRoute = "animations_route";
