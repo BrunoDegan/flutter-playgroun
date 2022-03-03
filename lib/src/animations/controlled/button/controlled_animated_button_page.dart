@@ -101,7 +101,6 @@ class _ControlledAnimatedButtonPageState
           tooltip: 'Voltar',
           icon: const Icon(Icons.arrow_back_ios),
           onPressed: () {
-            _controller.dispose();
             Navigator.of(context).pop();
           },
         ),
