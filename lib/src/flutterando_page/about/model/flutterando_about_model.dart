@@ -3,11 +3,11 @@ import 'package:flutter_playground/src/flutterando_page/about/model/flutterando_
 import 'package:flutter_playground/src/flutterando_page/about/model/flutterando_skill_model.dart';
 
 class FlutterandoAboutModel {
-  String userName;
-  String userImagePath;
-  String description;
-  List<SkillsModel> skillsList;
-  List<FlutterandoFavoritesModel> favorites;
+  final String userName;
+  final String userImagePath;
+  final String description;
+  final List<SkillsModel> skillsList;
+  final List<FlutterandoFavoritesModel> favorites;
 
   FlutterandoAboutModel(
       {required this.userImagePath,

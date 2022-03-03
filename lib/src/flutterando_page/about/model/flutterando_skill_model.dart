@@ -1,6 +1,6 @@
 class SkillsModel {
-  late String title;
-  late double percentage;
+  final String title;
+  final double percentage;
 
   SkillsModel({required this.title, required this.percentage});
 }

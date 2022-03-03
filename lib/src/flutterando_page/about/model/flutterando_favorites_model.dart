@@ -1,6 +1,6 @@
 class FlutterandoFavoritesModel {
-  late String title;
-  late String imagePath;
+  final String title;
+  final String imagePath;
 
   FlutterandoFavoritesModel({required this.title, required this.imagePath});
 }

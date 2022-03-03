@@ -1,8 +1,8 @@
 class FlutterandoListModel {
-  String imageUrl;
-  String title;
-  String subtitle;
-  int counter;
+  final String imageUrl;
+  final String title;
+  final String subtitle;
+  final int counter;
 
   FlutterandoListModel(
       {required this.imageUrl,
