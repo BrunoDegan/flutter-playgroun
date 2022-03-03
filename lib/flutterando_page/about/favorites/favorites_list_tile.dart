@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../data/flutterando_favorites_model.dart';
+import 'package:flutter_playground/flutterando_page/about/model/flutterando_favorites_model.dart';
 
 class FavoritesListTile extends StatelessWidget {
   FlutterandoFavoritesModel data;

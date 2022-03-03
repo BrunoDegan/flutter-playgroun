@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_playground/flutterando_page/about/data/flutterando_skill_model.dart';
+import 'package:flutter_playground/flutterando_page/about/model/flutterando_skill_model.dart';
 
 class SkillsListTile extends StatelessWidget {
   SkillsModel data;

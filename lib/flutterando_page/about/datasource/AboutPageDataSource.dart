@@ -1,6 +1,6 @@
-import 'package:flutter_playground/flutterando_page/about/data/flutterando_about_model.dart';
-import 'package:flutter_playground/flutterando_page/about/data/flutterando_favorites_model.dart';
-import 'package:flutter_playground/flutterando_page/about/data/flutterando_skill_model.dart';
+import 'package:flutter_playground/flutterando_page/about/model/flutterando_about_model.dart';
+import 'package:flutter_playground/flutterando_page/about/model/flutterando_favorites_model.dart';
+import 'package:flutter_playground/flutterando_page/about/model/flutterando_skill_model.dart';
 
 class AboutPageDataSource {
   AboutPageDataSource();
