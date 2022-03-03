@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_playground/common/strings_constants.dart';
 import 'package:flutter_playground/flutterando_page/about/flutterando_about_page.dart';
 import 'package:flutter_playground/flutterando_page/flutterando_main_page.dart';
-import 'package:flutter_playground/flutterando_page/repositories_screen/RepositoriesPage.dart';
+import 'package:flutter_playground/flutterando_page/repositories_screen/repositories_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
