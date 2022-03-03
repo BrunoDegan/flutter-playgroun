@@ -1,10 +1,10 @@
-class FlutterandoListData {
+class FlutterandoListModel {
   String imageUrl;
   String title;
   String subtitle;
   int counter;
 
-  FlutterandoListData(
+  FlutterandoListModel(
       {required this.imageUrl,
       required this.title,
       required this.subtitle,

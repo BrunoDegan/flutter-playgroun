@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../data/flutterando_favorites.dart';
+import '../data/flutterando_favorites_model.dart';
 
 class FavoritesListTile extends StatelessWidget {
-  FlutterandoFavorites data;
+  FlutterandoFavoritesModel data;
   FavoritesListTile({Key? key, required this.data}) : super(key: key);
 
   @override
