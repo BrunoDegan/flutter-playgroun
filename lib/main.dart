@@ -13,6 +13,9 @@ import 'package:flutter_playground/src/mockup/money_screen/money_page.dart';
 import 'package:flutter_playground/src/mockup/tinder_screen/tinder_page.dart';
 import 'package:flutter_playground/src/playground/playground_screen.dart';
 import 'package:flutter_playground/src/routes/constants_router.dart';
+import 'package:flutter_playground/themes/themes.dart';
+
+import 'src/playground/validador_cpf/validador_cpf_page.dart';
 
 void main() {
   runApp(const FlutterandoApp());
@@ -28,6 +31,9 @@ class FlutterandoApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: splashRoute,
       home: const FlutterandoSplashPage(),
+      theme: lightTheme,
+      darkTheme: darkTheme,
+      themeMode: ThemeMode.system,
       routes: {
         homeRoute: (context) => const HomePage(),
         playgroundRoute: (context) => const PlaygroundScreen(),
@@ -43,6 +49,7 @@ class FlutterandoApp extends StatelessWidget {
         controlledAnimatedButton: (context) =>
             const ControlledAnimatedButtonPage(),
         controlledAnimatedList: (context) => const ControlledAnimatedListPage(),
+        validadorCpfPlayground: (context) => const ValidadorCpfPage(),
       },
     );
   }

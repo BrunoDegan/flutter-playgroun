@@ -3,9 +3,14 @@ import 'package:flutter_playground/src/common/home_button.dart';
 import 'package:flutter_playground/src/common/strings_constants.dart';
 import 'package:flutter_playground/src/routes/constants_router.dart';
 
-class AnimationsPage extends StatelessWidget {
+class AnimationsPage extends StatefulWidget {
   const AnimationsPage({Key? key}) : super(key: key);
 
+  @override
+  State<StatefulWidget> createState() => _AnimationPageState();
+}
+
+class _AnimationPageState extends State<AnimationsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

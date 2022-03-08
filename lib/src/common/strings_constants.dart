@@ -10,6 +10,7 @@ const implicitButtonAnimPage = "Animações implícitas do botão";
 const implicitListAnimPage = "Animações implicitas da lista";
 const controlledButtonAnimPage = "Animações controladas do botão";
 const controlledListAnimPage = "Animações controladas da lista";
+const cpfValidatorPlayground = "Validador de CPF";
 
 // Desafio Pagina Github
 const flutterandoPage = "Desafio Flutterando Page";
@@ -29,3 +30,11 @@ const flutterandoSubtitle3 = "Ambiente destinado testes e estudos em geral";
 const flutterandoBottomsheetTitle1 = "Atividades";
 const flutterandoBottomsheetTitle2 = "Repositórios";
 const flutterandoBottomsheetTitle3 = "Sobre o dev";
+
+//Playground gerador/validador de CPF
+const cpfInputDocument = "Digite seu CPF";
+const cpf = "CPF";
+const validateCPF = "Validar CPF";
+const valid = "Válido";
+const notValid = "Inválido";
+const generateCPF = "Gerar CPF";

@@ -4,7 +4,6 @@ import 'package:flutter_playground/src/flutterando_page/widgets/flutterando_list
 import 'package:flutter_playground/src/flutterando_page/widgets/flutterando_top_bar_widget.dart';
 import 'package:flutter_playground/src/routes/constants_router.dart';
 
-
 class FlutterandoActivitiesPage extends StatefulWidget {
   const FlutterandoActivitiesPage({Key? key}) : super(key: key);
 
@@ -20,9 +19,11 @@ class _FlutterandoActivitiesPageState extends State<FlutterandoActivitiesPage> {
       body: Stack(
         children: [
           _contentBody(),
-          FlutterandoTopBarWidget(onTopBarButtonClickListener: () {
-            //TODO change theme data
-          }),
+          FlutterandoTopBarWidget(
+            onTopBarButtonClickListener: () {
+                
+            },
+          ),
         ],
       ),
     );

@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_playground/src/flutterando_page/about/model/flutterando_about_model.dart';
 
-class AboutCardWidget extends StatelessWidget {
+class AboutCardWidget extends StatefulWidget {
   final FlutterandoAboutModel data;
 
   const AboutCardWidget({Key? key, required this.data}) : super(key: key);
 
+  @override
+  State<StatefulWidget> createState() => _AboutCardState();
+}
+
+class _AboutCardState extends State<AboutCardWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,7 +32,7 @@ class AboutCardWidget extends StatelessWidget {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 image: DecorationImage(
-                  image: AssetImage(data.userImagePath),
+                  image: AssetImage(widget.data.userImagePath),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -36,7 +41,7 @@ class AboutCardWidget extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 13.0, bottom: 13.0),
             child: Text(
-              data.userName,
+              widget.data.userName,
               style: const TextStyle(
                 decoration: TextDecoration.none,
                 fontWeight: FontWeight.w400,
@@ -48,7 +53,7 @@ class AboutCardWidget extends StatelessWidget {
             ),
           ),
           Text(
-            data.description,
+            widget.data.description,
             textAlign: TextAlign.center,
             style: const TextStyle(
               decoration: TextDecoration.none,

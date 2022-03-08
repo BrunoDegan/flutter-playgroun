@@ -21,6 +21,6 @@ List<FlutterandoListModel> flutterandoItens = [
     imageUrl: "assets/flutterando_screen/playground_icon.png",
     title: flutterandoPlayground,
     subtitle: flutterandoSubtitle3,
-    counter: 2,
+    counter: 3,
   ),
 ];

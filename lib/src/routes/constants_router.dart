@@ -20,3 +20,6 @@ const String implicitAnimatedList = "implicit_animated_list";
 //Controlled animation routes
 const String controlledAnimatedButton = "controlled_animated_button";
 const String controlledAnimatedList = "controlled_animated_list";
+
+// Cpf validador
+const String validadorCpfPlayground = "cpf_validador_playground";

@@ -2,12 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_playground/src/common/strings_constants.dart';
 import 'package:flutter_playground/src/common/text_formatter.dart';
 
-class FlutterandoTopBarWidget extends StatelessWidget {
+class FlutterandoTopBarWidget extends StatefulWidget {
   Function onTopBarButtonClickListener;
+
+  @override
+  State<StatefulWidget> createState() => _FlutterandoTopBarWidgetState();
 
   FlutterandoTopBarWidget({Key? key, required this.onTopBarButtonClickListener})
       : super(key: key);
+}
 
+class _FlutterandoTopBarWidgetState extends State<FlutterandoTopBarWidget> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -44,7 +49,7 @@ class FlutterandoTopBarWidget extends StatelessWidget {
                   alignment: Alignment.centerRight,
                 ),
                 onPressed: () {
-                  onTopBarButtonClickListener.call();
+                  widget.onTopBarButtonClickListener.call();
                 },
               ),
             ]),

@@ -40,6 +40,18 @@ class PlaygroundScreen extends StatelessWidget {
             SizedBox(
               width: MediaQuery.of(context).size.width,
               height: 10,
+            ),
+            HomeButton(
+              context: context,
+              buttonText: cpfValidatorPlayground,
+              exerciseNumber: 3,
+              onClicked: () {
+                Navigator.of(context).pushNamed(validadorCpfPlayground);
+              },
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: 10,
             )
           ],
         ),

@@ -3,9 +3,14 @@ import 'package:flutter_playground/src/common/home_button.dart';
 import 'package:flutter_playground/src/common/strings_constants.dart';
 import 'package:flutter_playground/src/routes/constants_router.dart';
 
-class MockupPage extends StatelessWidget {
+class MockupPage extends StatefulWidget {
   const MockupPage({Key? key}) : super(key: key);
 
+  @override
+  State<StatefulWidget> createState() => _MockupPageState();
+}
+
+class _MockupPageState extends State<MockupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

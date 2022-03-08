@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_playground/src/flutterando_page/about/model/flutterando_favorites_model.dart';
 
-class FavoritesListTile extends StatelessWidget {
+class FavoritesListTileWidget extends StatefulWidget {
   FlutterandoFavoritesModel data;
-  FavoritesListTile({Key? key, required this.data}) : super(key: key);
+  FavoritesListTileWidget({Key? key, required this.data}) : super(key: key);
 
+  @override
+  State<StatefulWidget> createState() => _FavoriteListTileState();
+}
+
+class _FavoriteListTileState extends State<FavoritesListTileWidget> {
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -22,7 +27,7 @@ class FavoritesListTile extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Image.asset(
-              data.imagePath,
+              widget.data.imagePath,
               alignment: Alignment.center,
               width: 38.8,
               height: 46.0,
@@ -31,7 +36,7 @@ class FavoritesListTile extends StatelessWidget {
               height: 8,
             ),
             Text(
-              data.title,
+              widget.data.title,
               textAlign: TextAlign.center,
               style: const TextStyle(
                 fontSize: 12,

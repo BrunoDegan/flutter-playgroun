@@ -3,9 +3,14 @@ import 'package:flutter_playground/src/common/text_formatter.dart';
 import 'package:flutter_playground/src/mockup/money_screen/money_button.dart';
 import 'package:flutter_playground/src/mockup/money_screen/money_strings.dart';
 
-class MoneyPage extends StatelessWidget {
+class MoneyPage extends StatefulWidget {
   const MoneyPage({Key? key}) : super(key: key);
 
+  @override
+  State<StatefulWidget> createState() => _MoneyPageState();
+}
+
+class _MoneyPageState extends State<MoneyPage> {
   final TextStyle signUpWithEmailTextStyle = const TextStyle(
     fontSize: 18.0,
     color: Colors.white,
@@ -80,6 +85,18 @@ class MoneyPage extends StatelessWidget {
     );
   }
 
+  RichText _formatSubtitle() {
+    return RichText(
+      textAlign: TextAlign.center,
+      text: TextSpan(
+        children: [
+          formatStringInfo(info: moneyAlreadyHasAccount1),
+          formatStringInfoUnderline(info: moneyAlreadyHasAccount2)
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -103,18 +120,6 @@ class MoneyPage extends StatelessWidget {
                 content: Text(info), duration: const Duration(seconds: 1)));
           },
         ),
-      ),
-    );
-  }
-
-  RichText _formatSubtitle() {
-    return RichText(
-      textAlign: TextAlign.center,
-      text: TextSpan(
-        children: [
-          formatStringInfo(info: moneyAlreadyHasAccount1),
-          formatStringInfoUnderline(info: moneyAlreadyHasAccount2)
-        ],
       ),
     );
   }

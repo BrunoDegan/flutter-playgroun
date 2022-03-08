@@ -3,11 +3,16 @@ import 'package:flutter_playground/src/flutterando_page/about/favorites/favorite
 import 'package:flutter_playground/src/flutterando_page/about/model/flutterando_about_model.dart';
 import 'package:flutter_playground/src/flutterando_page/strings/flutterando_strings.dart';
 
-class FavoritesWidget extends StatelessWidget {
+class FavoritesWidget extends StatefulWidget {
   final FlutterandoAboutModel data;
 
   const FavoritesWidget({Key? key, required this.data}) : super(key: key);
 
+  @override
+  State<StatefulWidget> createState() => _FavoriteWidgetState();
+}
+
+class _FavoriteWidgetState extends State<FavoritesWidget> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -31,10 +36,11 @@ class FavoritesWidget extends StatelessWidget {
           child: ListView.builder(
             shrinkWrap: true,
             physics: const AlwaysScrollableScrollPhysics(),
-            itemCount: data.favorites.length,
+            itemCount: widget.data.favorites.length,
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
-              return FavoritesListTile(data: data.favorites[index]);
+              return FavoritesListTileWidget(
+                  data: widget.data.favorites[index]);
             },
           ),
         )
