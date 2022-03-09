@@ -18,7 +18,14 @@ class _ValidadorCpf extends State<ValidadorCpfPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Playground Gerador/Validador de CPF")),
+      appBar: AppBar(
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+          title: const Text("Playground Gerador/Validador de CPF")),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -38,16 +45,16 @@ class _ValidadorCpf extends State<ValidadorCpfPage> {
   _cpfValidatorContainer() {
     return Container(
       width: 300,
-      height: 150,
-      decoration: const BoxDecoration(
-        color: Colors.grey,
+      height: 200,
+      decoration: BoxDecoration(
+        color: Colors.grey[500],
         shape: BoxShape.rectangle,
-        borderRadius: BorderRadius.all(
+        borderRadius: const BorderRadius.all(
           Radius.circular(10.0),
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(15.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -70,10 +77,14 @@ class _ValidadorCpf extends State<ValidadorCpfPage> {
             ValueListenableBuilder<bool>(
                 valueListenable: validatorStore,
                 builder: (context, value, child) {
-                  return Text(
-                    value ? valid : notValid,
-                    style: TextStyle(
-                      backgroundColor: value ? Colors.green : Colors.red,
+                  return Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Text(
+                      value ? valid : notValid,
+                      style: TextStyle(
+                        decoration: TextDecoration.underline,
+                        backgroundColor: value ? Colors.green : Colors.red,
+                      ),
                     ),
                   );
                 }),
@@ -86,44 +97,39 @@ class _ValidadorCpf extends State<ValidadorCpfPage> {
   _cpfGeneratorContainer() {
     return Container(
       width: 300,
-      height: 100,
-      decoration: const BoxDecoration(
-        color: Colors.grey,
+      height: 150,
+      decoration: BoxDecoration(
+        color: Colors.grey[500],
         shape: BoxShape.rectangle,
-        borderRadius: BorderRadius.all(
+        borderRadius: const BorderRadius.all(
           Radius.circular(10.0),
         ),
       ),
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            ValueListenableBuilder<String?>(
-                valueListenable: generatorStore,
-                builder: (context, value, child) {
-                  return Center(
-                    child: Text(
-                      value ?? notValid,
-                      style: TextStyle(
-                        backgroundColor: value != null && value.isNotEmpty
-                            ? Colors.green
-                            : Colors.red,
-                      ),
-                    ),
-                  );
-                }),
-            const SizedBox(
-              height: 10.0,
-            ),
-            ElevatedButton(
-              child: const Text(generateCPF),
-              onPressed: () {
-                generatorStore.generateCpf();
-              },
-            ),
-          ],
-        ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          ValueListenableBuilder<String?>(
+              valueListenable: generatorStore,
+              builder: (context, value, child) {
+                return Text(
+                  value ?? notValid,
+                  style: TextStyle(
+                    backgroundColor: value != null && value.isNotEmpty
+                        ? Colors.green
+                        : Colors.red,
+                  ),
+                );
+              }),
+          const SizedBox(
+            height: 10.0,
+          ),
+          ElevatedButton(
+            child: const Text(generateCPF),
+            onPressed: () {
+              generatorStore.generateCpf();
+            },
+          ),
+        ],
       ),
     );
   }
