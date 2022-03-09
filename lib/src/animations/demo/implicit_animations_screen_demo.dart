@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 
 class ImplicitAnimationPageDemo extends StatefulWidget {
   const ImplicitAnimationPageDemo({Key? key}) : super(key: key);
@@ -29,15 +30,19 @@ class _ImplicitAnimationPageStateDemo extends State<ImplicitAnimationPageDemo> {
           },
           child: AnimatedScale(
             curve: _curve,
-            scale: _isExpanded ? 10 : 1,
+            scale: _isExpanded ? 5 : 1,
             duration: _duration,
             child: AnimatedContainer(
               duration: _duration,
               alignment: Alignment.center,
-              width: _isExpanded ? 100 : 50,
-              height: _isExpanded ? 100 : 50,
-              child: const Center(
-                child: Text("Flutterando"),
+              width: _isExpanded ? 150 : 100,
+              height: _isExpanded ? 150 : 100,
+              child: const Text(
+                "Flutterando",
+                style: TextStyle(
+                  color: Colors.blue,
+                  decorationStyle: TextDecorationStyle.solid,
+                ),
               ),
             ),
           ),
