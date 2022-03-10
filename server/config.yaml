@@ -1,0 +1,15 @@
+name: Test
+port: 3022
+db: db.json
+statics: public/
+
+storage:
+  name: "storage"
+  folder: assets/flutterando_screen/
+
+# auth:
+#   key: dajdi3cdj8jw40jv89cj4uybfg9wh9vcnvb
+#   exp: 3600
+#   scape:
+#     - storage
+#     - file
