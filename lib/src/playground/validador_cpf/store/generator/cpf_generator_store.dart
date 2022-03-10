@@ -4,7 +4,7 @@ import 'package:flutter_playground/src/playground/validador_cpf/store/generator/
 
 class CpfGeneratorStore extends ValueNotifier<String?>
     implements CpfGeneratorStoreContract {
-  CpfGeneratorStore(String? value) : super(value);
+  CpfGeneratorStore() : super("");
 
   @override
   void generateCpf() {

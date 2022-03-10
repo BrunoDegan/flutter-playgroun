@@ -12,7 +12,7 @@ class ValidadorCpfPage extends StatefulWidget {
 
 class _ValidadorCpf extends State<ValidadorCpfPage> {
   TextEditingController textEditingController = TextEditingController();
-  final generatorStore = CpfGeneratorStore(null);
+  final generatorStore = CpfGeneratorStore();
   final validatorStore = CpfValidatorStore(false);
 
   @override

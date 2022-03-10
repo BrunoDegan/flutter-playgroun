@@ -36,12 +36,12 @@ class CpfModel {
       return false;
     }
 
-    if (cpfSplitted.length < 11) return false;
+    if (cpfSplitted.length < 11 || cpfSplitted.length > 11) return false;
 
     return true;
   }
 
-  String? generateCpf() {
+  String generateCpf() {
     String cpfGenerated = "";
     while (validateDocument(cpfGenerated) == false) {
       cpfGenerated = Random().nextInt(999999999).toString();
@@ -60,6 +60,6 @@ class CpfModel {
         }
       }
     }
-    return null;
+    return cpfGenerated;
   }
 }
