@@ -1,4 +1,7 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_playground/src/flutterando_page/about/datasource/local_datasource.dart';
+import 'package:flutter_playground/src/flutterando_page/about/datasource/remote_datasource.dart';
 import 'package:flutter_playground/src/flutterando_page/about/favorites/favorites_widget.dart';
 import 'package:flutter_playground/src/flutterando_page/about/profile_info/profile_card_widget.dart';
 import 'package:flutter_playground/src/flutterando_page/about/repositories/about_repository.dart';
@@ -18,8 +21,10 @@ class FlutterandoAboutPage extends StatefulWidget {
 
 class _FlutterandoAboutPageState extends State<FlutterandoAboutPage> {
   final AboutPageStore _store = AboutPageStore(
-    connectivityService: CheckConnectivityService(),
-    repository: AboutRepository(),
+    repository: AboutRepository(
+        remoteDataSource: RemoteDataSource(dio: Dio()),
+        localDataSource: LocalDataSource(),
+        connectivityService: CheckConnectivityService()),
   );
 
   @override
