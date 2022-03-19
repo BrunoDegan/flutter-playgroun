@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_playground/src/flutterando_page/about/model/flutterando_favorites_model.dart';
+import 'package:flutter_playground/src/flutterando_page/about/model/favorites_model.dart';
 
 class FavoritesListTileWidget extends StatefulWidget {
-  FlutterandoFavoritesModel data;
+  FavoritesModel data;
   FavoritesListTileWidget({Key? key, required this.data}) : super(key: key);
 
   @override

@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_playground/src/flutterando_page/about/model/flutterando_about_model.dart';
+import 'package:flutter_playground/src/flutterando_page/about/model/about_model.dart';
 
-class AboutCardWidget extends StatefulWidget {
-  final FlutterandoAboutModel data;
-
-  const AboutCardWidget({Key? key, required this.data}) : super(key: key);
+class ProfileCardWidget extends StatefulWidget {
+  AboutModel model;
+  ProfileCardWidget({Key? key, required this.model}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _AboutCardState();
 }
 
-class _AboutCardState extends State<AboutCardWidget> {
+class _AboutCardState extends State<ProfileCardWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -32,7 +31,7 @@ class _AboutCardState extends State<AboutCardWidget> {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 image: DecorationImage(
-                  image: AssetImage(widget.data.userImagePath),
+                  image: AssetImage(widget.model.userImagePath),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -41,7 +40,7 @@ class _AboutCardState extends State<AboutCardWidget> {
           Padding(
             padding: const EdgeInsets.only(top: 13.0, bottom: 13.0),
             child: Text(
-              widget.data.userName,
+              widget.model.userName,
               style: const TextStyle(
                 decoration: TextDecoration.none,
                 fontWeight: FontWeight.w400,
@@ -53,7 +52,7 @@ class _AboutCardState extends State<AboutCardWidget> {
             ),
           ),
           Text(
-            widget.data.description,
+            widget.model.description,
             textAlign: TextAlign.center,
             style: const TextStyle(
               decoration: TextDecoration.none,

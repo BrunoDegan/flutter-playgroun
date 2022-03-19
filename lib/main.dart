@@ -14,7 +14,6 @@ import 'package:flutter_playground/src/mockup/tinder_screen/tinder_page.dart';
 import 'package:flutter_playground/src/playground/playground_screen.dart';
 import 'package:flutter_playground/src/routes/constants_router.dart';
 import 'package:flutter_playground/themes/themes.dart';
-
 import 'src/playground/validador_cpf/validador_cpf_page.dart';
 
 void main() {

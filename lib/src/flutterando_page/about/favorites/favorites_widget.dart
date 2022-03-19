@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_playground/src/flutterando_page/about/favorites/favorites_list_tile.dart';
-import 'package:flutter_playground/src/flutterando_page/about/model/flutterando_about_model.dart';
+import 'package:flutter_playground/src/flutterando_page/about/model/about_model.dart';
 import 'package:flutter_playground/src/flutterando_page/strings/flutterando_strings.dart';
 
 class FavoritesWidget extends StatefulWidget {
-  final FlutterandoAboutModel data;
+  AboutModel model;
 
-  const FavoritesWidget({Key? key, required this.data}) : super(key: key);
+  FavoritesWidget({Key? key, required this.model}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _FavoriteWidgetState();
@@ -34,13 +34,12 @@ class _FavoriteWidgetState extends State<FavoritesWidget> {
           width: MediaQuery.of(context).size.width,
           height: 120,
           child: ListView.builder(
-            shrinkWrap: true,
             physics: const AlwaysScrollableScrollPhysics(),
-            itemCount: widget.data.favorites.length,
+            itemCount: widget.model.favorites.length,
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
               return FavoritesListTileWidget(
-                  data: widget.data.favorites[index]);
+                  data: widget.model.favorites[index]);
             },
           ),
         )
