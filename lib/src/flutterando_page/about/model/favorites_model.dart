@@ -1,4 +1,6 @@
-class FavoritesModel {
+import 'package:equatable/equatable.dart';
+
+class FavoritesModel extends Equatable {
   final String title;
   final String imagePath;
 
@@ -12,4 +14,10 @@ class FavoritesModel {
   }
 
   Map<String, dynamic> toJson() => {'title': title, 'imagePath': imagePath};
+
+  @override
+  List<Object> get props => [title, imagePath];
+
+  @override
+  bool? get stringify => false;
 }

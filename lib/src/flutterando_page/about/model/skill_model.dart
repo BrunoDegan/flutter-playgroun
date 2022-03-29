@@ -1,4 +1,6 @@
-class SkillsModel {
+import 'package:equatable/equatable.dart';
+
+class SkillsModel extends Equatable {
   final String title;
   final int percentage;
 
@@ -12,4 +14,10 @@ class SkillsModel {
   }
 
   Map<String, dynamic> toJson() => {'title': title, 'percentage': percentage};
+
+  @override
+  List<Object> get props => [title, percentage];
+
+  @override
+  bool? get stringify => false;
 }

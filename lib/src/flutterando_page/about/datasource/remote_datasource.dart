@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:dio/dio.dart';
 import 'package:flutter_playground/src/flutterando_page/about/model/about_model.dart';
 
