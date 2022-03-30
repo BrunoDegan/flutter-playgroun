@@ -1,14 +1,10 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_playground/src/flutterando_page/about/datasource/local_datasource.dart';
-import 'package:flutter_playground/src/flutterando_page/about/datasource/remote_datasource.dart';
 import 'package:flutter_playground/src/flutterando_page/about/favorites/favorites_widget.dart';
 import 'package:flutter_playground/src/flutterando_page/about/profile_info/profile_card_widget.dart';
-import 'package:flutter_playground/src/flutterando_page/about/repositories/about_repository.dart';
-import 'package:flutter_playground/src/flutterando_page/about/services/check_internet_connectivity_service.dart';
 import 'package:flutter_playground/src/flutterando_page/about/skills/skills_widget.dart';
 import 'package:flutter_playground/src/flutterando_page/about/store/about_screen_store.dart';
 import 'package:flutter_playground/src/flutterando_page/widgets/flutterando_top_bar_widget.dart';
+import 'package:provider/provider.dart';
 
 import '../states/flutterando_page_state.dart';
 
@@ -20,16 +16,12 @@ class FlutterandoAboutPage extends StatefulWidget {
 }
 
 class _FlutterandoAboutPageState extends State<FlutterandoAboutPage> {
-  final AboutPageStore _store = AboutPageStore(
-    repository: AboutRepository(
-        remoteDataSource: RemoteDataSource(dio: Dio()),
-        localDataSource: LocalDataSource(),
-        connectivityService: CheckConnectivityService()),
-  );
+  late AboutPageStore _store;
 
   @override
   void initState() {
     super.initState();
+    _store = context.read<AboutPageStore>();
     _store.fetchAboutScreenModel();
     _store.addListener(() {
       setState(() {});
