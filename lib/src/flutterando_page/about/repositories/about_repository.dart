@@ -21,12 +21,12 @@ class AboutRepository {
         localDataSource.saveModel(model);
         return SuccessState(model);
       } else {
-        return ErrorState("Erro ao fazer requisição para obter modelo da API");
+        return ErrorState('Erro ao fazer requisição para obter modelo da API');
       }
     } else {
       AboutModel? model = await localDataSource.getModel();
       if (model == null) {
-        return ErrorState("Erro ao carregar o modelo da memória");
+        return ErrorState('Erro ao carregar o modelo da memória');
       } else {
         return SuccessState(model);
       }
