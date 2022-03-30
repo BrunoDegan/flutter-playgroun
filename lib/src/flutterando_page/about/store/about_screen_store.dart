@@ -5,8 +5,7 @@ import 'package:flutter_playground/src/flutterando_page/states/flutterando_page_
 class AboutPageStore extends ValueNotifier<PageState> {
   AboutRepository repository;
 
-  AboutPageStore({required this.repository})
-      : super(InitialState());
+  AboutPageStore({required this.repository}) : super(InitialState());
 
   fetchAboutScreenModel() async {
     value = LoadingState();
