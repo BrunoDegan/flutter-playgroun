@@ -12,7 +12,7 @@ class FlutterandoSplashPage extends StatelessWidget {
       height: MediaQuery.of(context).size.height,
       color: const Color(0xFF121517),
       child: Center(
-          child: Image.asset("assets/flutterando_screen/masterclass_logo.png")),
+          child: Image.asset('assets/flutterando_screen/masterclass_logo.png')),
     );
   }
 

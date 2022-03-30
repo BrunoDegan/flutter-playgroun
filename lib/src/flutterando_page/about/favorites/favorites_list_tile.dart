@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_playground/src/flutterando_page/about/model/favorites_model.dart';
 
 class FavoritesListTileWidget extends StatefulWidget {
-  FavoritesModel data;
-  FavoritesListTileWidget({Key? key, required this.data}) : super(key: key);
+  final FavoritesModel data;
+  const FavoritesListTileWidget({Key? key, required this.data}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _FavoriteListTileState();
@@ -41,7 +41,7 @@ class _FavoriteListTileState extends State<FavoritesListTileWidget> {
               style: const TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.normal,
-                fontFamily: "Poppins-Medium",
+                fontFamily: 'Poppins-Medium',
                 color: Color(0xFFEDF4F8),
               ),
             ),

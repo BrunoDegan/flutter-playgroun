@@ -4,9 +4,9 @@ import 'package:flutter_playground/src/flutterando_page/about/model/about_model.
 import 'package:flutter_playground/src/flutterando_page/strings/flutterando_strings.dart';
 
 class FavoritesWidget extends StatefulWidget {
-  AboutModel model;
+  final AboutModel model;
 
-  FavoritesWidget({Key? key, required this.model}) : super(key: key);
+  const FavoritesWidget({Key? key, required this.model}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _FavoriteWidgetState();

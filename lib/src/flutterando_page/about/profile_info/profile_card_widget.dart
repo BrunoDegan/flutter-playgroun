@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_playground/src/flutterando_page/about/model/about_model.dart';
 
 class ProfileCardWidget extends StatefulWidget {
-  AboutModel model;
-  ProfileCardWidget({Key? key, required this.model}) : super(key: key);
+  final AboutModel model;
+  const ProfileCardWidget({Key? key, required this.model}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _AboutCardState();

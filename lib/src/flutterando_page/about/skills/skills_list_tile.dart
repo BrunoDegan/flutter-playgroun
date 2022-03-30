@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_playground/src/flutterando_page/about/model/skill_model.dart';
 
 class SkillsListTile extends StatelessWidget {
-  SkillsModel data;
-  SkillsListTile({Key? key, required this.data}) : super(key: key);
+  final SkillsModel data;
+  const SkillsListTile({Key? key, required this.data}) : super(key: key);
 
   _progressBar(BuildContext context) {
     return Container(

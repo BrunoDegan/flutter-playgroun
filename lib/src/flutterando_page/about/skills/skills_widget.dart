@@ -4,8 +4,8 @@ import 'package:flutter_playground/src/flutterando_page/about/skills/skills_list
 import 'package:flutter_playground/src/flutterando_page/strings/flutterando_strings.dart';
 
 class SkillsWidget extends StatefulWidget {
-  AboutModel model;
-  SkillsWidget({Key? key, required this.model}) : super(key: key);
+  final AboutModel model;
+  const SkillsWidget({Key? key, required this.model}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _SkillWidgetState();
