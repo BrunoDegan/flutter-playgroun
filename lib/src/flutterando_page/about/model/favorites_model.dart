@@ -4,7 +4,7 @@ class FavoritesModel extends Equatable {
   final String title;
   final String imagePath;
 
-  FavoritesModel({required this.title, required this.imagePath});
+  const FavoritesModel({required this.title, required this.imagePath});
 
   factory FavoritesModel.fromJson(Map<String, dynamic> json) {
     return FavoritesModel(

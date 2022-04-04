@@ -4,7 +4,7 @@ class SkillsModel extends Equatable {
   final String title;
   final int percentage;
 
-  SkillsModel({required this.title, required this.percentage});
+  const SkillsModel({required this.title, required this.percentage});
 
   factory SkillsModel.fromJson(Map<String, dynamic> json) {
     return SkillsModel(
