@@ -19,11 +19,11 @@ main() {
     'GIVEN valid about model WHEN remote fetchs model on server THEN answer with model',
     () async {
       //Given
-      when(() => remoteDatasourceMock.fetchModel())
+      when(() => remoteDatasourceMock.getModel())
           .thenAnswer((_) => Future.value(modelMock));
 
       //When
-      AboutModel? expectedModel = await remoteDatasourceMock.fetchModel();
+      AboutModel? expectedModel = await remoteDatasourceMock.getModel();
 
       //Then
       expect(modelMock, expectedModel);
@@ -34,11 +34,11 @@ test(
     'GIVEN null about model WHEN fetching remote fails THEN answer with null value',
     () async {
       //Given
-      when(() => remoteDatasourceMock.fetchModel())
+      when(() => remoteDatasourceMock.getModel())
           .thenAnswer((_) => Future.value(null));
 
       //When
-      AboutModel? expectedModel = await remoteDatasourceMock.fetchModel();
+      AboutModel? expectedModel = await remoteDatasourceMock.getModel();
 
       //Then
       expect(null, expectedModel);

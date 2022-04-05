@@ -2,10 +2,11 @@ import 'package:flutter_playground/src/common/services/check_internet_connectivi
 import 'package:flutter_playground/src/flutterando_page/about/datasource/about_local_datasource.dart';
 import 'package:flutter_playground/src/flutterando_page/about/datasource/about_remote_datasource.dart';
 import 'package:flutter_playground/src/flutterando_page/about/model/about_model.dart';
+import 'package:flutter_playground/src/flutterando_page/about/repositories/about_repository_interface.dart';
 import 'package:flutter_playground/src/flutterando_page/states/about_page_state.dart';
 import 'package:flutter_playground/src/common/page_state.dart';
 
-class AboutRepository {
+class AboutRepository extends IAboutRepository {
   late AboutRemoteDataSource remoteDataSource;
   late AboutLocalDataSource localDataSource;
   late CheckConnectivityService connectivityService;
@@ -15,9 +16,10 @@ class AboutRepository {
       required this.localDataSource,
       required this.connectivityService});
 
+  @override
   Future<PageState> getModel() async {
     if (await connectivityService.isConnected()) {
-      AboutModel? model = await remoteDataSource.fetchModel();
+      AboutModel? model = await remoteDataSource.getModel();
       if (model != null) {
         localDataSource.saveModel(model);
         return SuccessState(model);

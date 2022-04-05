@@ -36,7 +36,7 @@ class FlutterandoApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ...providers,
+        ...module,
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

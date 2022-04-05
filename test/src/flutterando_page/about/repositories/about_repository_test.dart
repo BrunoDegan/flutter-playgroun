@@ -38,7 +38,7 @@ main() {
     //Given
     when(() => checkConnectivityMock.isConnected())
         .thenAnswer((_) => Future.value(true));
-    when(() => remoteDatasourceMock.fetchModel())
+    when(() => remoteDatasourceMock.getModel())
         .thenAnswer((_) => Future.value(modelMock));
     when(() => localDataSourceMock.saveModel(modelMock))
         .thenAnswer((_) => Future.value(null));
@@ -72,7 +72,7 @@ main() {
     //Given
     when(() => checkConnectivityMock.isConnected())
         .thenAnswer((_) => Future.value(true));
-    when(() => remoteDatasourceMock.fetchModel())
+    when(() => remoteDatasourceMock.getModel())
         .thenAnswer((_) => Future.value(null));
 
     //When
