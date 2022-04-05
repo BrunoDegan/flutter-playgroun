@@ -3,10 +3,11 @@ import 'package:flutter_playground/src/flutterando_page/about/favorites/favorite
 import 'package:flutter_playground/src/flutterando_page/about/profile_info/profile_card_widget.dart';
 import 'package:flutter_playground/src/flutterando_page/about/skills/skills_widget.dart';
 import 'package:flutter_playground/src/flutterando_page/about/store/about_screen_store.dart';
-import 'package:flutter_playground/src/flutterando_page/widgets/flutterando_top_bar_widget.dart';
+import 'package:flutter_playground/src/common/page_state.dart';
+import 'package:flutter_playground/src/flutterando_page/view/widgets/flutterando_top_bar_widget.dart';
 import 'package:provider/provider.dart';
 
-import '../states/flutterando_page_state.dart';
+import '../states/about_page_state.dart';
 
 class FlutterandoAboutPage extends StatefulWidget {
   const FlutterandoAboutPage({Key? key}) : super(key: key);

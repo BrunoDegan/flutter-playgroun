@@ -1,4 +1,4 @@
-import 'package:flutter_playground/src/flutterando_page/about/datasource/local_datasource.dart';
+import 'package:flutter_playground/src/flutterando_page/about/datasource/about_local_datasource.dart';
 import 'package:flutter_playground/src/flutterando_page/about/model/about_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../utils/about_page_mock.dart';
 
-class LocalDataSourceMock extends Mock implements LocalDataSource {}
+class LocalDataSourceMock extends Mock implements AboutLocalDataSource {}
 
 void main() {
   late LocalDataSourceMock dataSourceMock;

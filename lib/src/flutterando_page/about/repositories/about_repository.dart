@@ -1,12 +1,13 @@
-import 'package:flutter_playground/src/flutterando_page/about/datasource/local_datasource.dart';
-import 'package:flutter_playground/src/flutterando_page/about/datasource/remote_datasource.dart';
+import 'package:flutter_playground/src/common/services/check_internet_connectivity_service.dart';
+import 'package:flutter_playground/src/flutterando_page/about/datasource/about_local_datasource.dart';
+import 'package:flutter_playground/src/flutterando_page/about/datasource/about_remote_datasource.dart';
 import 'package:flutter_playground/src/flutterando_page/about/model/about_model.dart';
-import 'package:flutter_playground/src/flutterando_page/about/services/check_internet_connectivity_service.dart';
-import 'package:flutter_playground/src/flutterando_page/states/flutterando_page_state.dart';
+import 'package:flutter_playground/src/flutterando_page/states/about_page_state.dart';
+import 'package:flutter_playground/src/common/page_state.dart';
 
 class AboutRepository {
-  late RemoteDataSource remoteDataSource;
-  late LocalDataSource localDataSource;
+  late AboutRemoteDataSource remoteDataSource;
+  late AboutLocalDataSource localDataSource;
   late CheckConnectivityService connectivityService;
 
   AboutRepository(
@@ -25,10 +26,10 @@ class AboutRepository {
       }
     } else {
       AboutModel? model = await localDataSource.getModel();
-      if (model == null) {
-        return ErrorState('Erro ao carregar o modelo da memória');
-      } else {
+      if (model != null) {
         return SuccessState(model);
+      } else {
+        return ErrorState('Erro ao carregar o modelo da memória');
       }
     }
   }

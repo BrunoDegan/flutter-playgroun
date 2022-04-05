@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_playground/src/common/list_constants.dart';
-import 'package:flutter_playground/src/flutterando_page/widgets/flutterando_list_tile.dart';
-import 'package:flutter_playground/src/flutterando_page/widgets/flutterando_top_bar_widget.dart';
+import 'package:flutter_playground/src/flutterando_page/view/widgets/flutterando_list_tile.dart';
+import 'package:flutter_playground/src/flutterando_page/view/widgets/flutterando_top_bar_widget.dart';
 import 'package:flutter_playground/src/routes/constants_router.dart';
 
 class FlutterandoActivitiesPage extends StatefulWidget {

@@ -3,10 +3,10 @@ import 'package:flutter_playground/src/flutterando_page/about/model/about_model.
 
 const _endpoint = 'https://my-json-server.typicode.com/BrunoDegan/demo/about';
 
-class RemoteDataSource {
+class AboutRemoteDataSource {
   final Dio dio;
 
-  RemoteDataSource({required this.dio});
+  AboutRemoteDataSource({required this.dio});
 
   Future<AboutModel?> fetchModel() async {
     try {

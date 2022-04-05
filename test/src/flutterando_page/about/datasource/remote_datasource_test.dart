@@ -1,12 +1,12 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_playground/src/flutterando_page/about/datasource/remote_datasource.dart';
+import 'package:flutter_playground/src/flutterando_page/about/datasource/about_remote_datasource.dart';
 import 'package:flutter_playground/src/flutterando_page/about/model/about_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../../utils/about_page_mock.dart';
 
-class RemoteDataSourceMock extends Mock implements RemoteDataSource {}
+class RemoteDataSourceMock extends Mock implements AboutRemoteDataSource {}
 
 main() {
   late RemoteDataSourceMock remoteDatasourceMock;

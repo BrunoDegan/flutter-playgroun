@@ -1,4 +1,4 @@
-import 'package:flutter_playground/src/flutterando_page/about/services/check_internet_connectivity_service.dart';
+import 'package:flutter_playground/src/common/services/check_internet_connectivity_service.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 

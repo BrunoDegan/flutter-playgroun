@@ -1,19 +1,19 @@
-import 'package:flutter_playground/src/flutterando_page/about/datasource/local_datasource.dart';
-import 'package:flutter_playground/src/flutterando_page/about/datasource/remote_datasource.dart';
+import 'package:flutter_playground/src/common/services/check_internet_connectivity_service.dart';
+import 'package:flutter_playground/src/flutterando_page/about/datasource/about_local_datasource.dart';
+import 'package:flutter_playground/src/flutterando_page/about/datasource/about_remote_datasource.dart';
 import 'package:flutter_playground/src/flutterando_page/about/repositories/about_repository.dart';
-import 'package:flutter_playground/src/flutterando_page/about/services/check_internet_connectivity_service.dart';
-import 'package:flutter_playground/src/flutterando_page/states/flutterando_page_state.dart';
+import 'package:flutter_playground/src/flutterando_page/states/about_page_state.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../../utils/about_page_mock.dart';
 
-class RemoteDataSourceMock extends Mock implements RemoteDataSource {}
+class RemoteDataSourceMock extends Mock implements AboutRemoteDataSource {}
 
 class CheckConnectivityServiceMock extends Mock
     implements CheckConnectivityService {}
 
-class LocalDataSourceMock extends Mock implements LocalDataSource {}
+class LocalDataSourceMock extends Mock implements AboutLocalDataSource {}
 
 main() {
   late RemoteDataSourceMock remoteDatasourceMock;

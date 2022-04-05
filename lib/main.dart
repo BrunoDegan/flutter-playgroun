@@ -7,10 +7,11 @@ import 'package:flutter_playground/src/animations/demo/controlled_animations_scr
 import 'package:flutter_playground/src/animations/demo/implicit_animations_screen_demo.dart';
 import 'package:flutter_playground/src/animations/implicit/button/implicit_animated_button_page.dart';
 import 'package:flutter_playground/src/animations/implicit/list/implicit_animated_list_page.dart';
-import 'package:flutter_playground/src/flutterando_page/about/datasource/local_datasource.dart';
-import 'package:flutter_playground/src/flutterando_page/about/datasource/remote_datasource.dart';
+import 'package:flutter_playground/src/common/services/check_internet_connectivity_service.dart';
+import 'package:flutter_playground/src/di/provider_di.dart';
+import 'package:flutter_playground/src/flutterando_page/about/datasource/about_local_datasource.dart';
+import 'package:flutter_playground/src/flutterando_page/about/datasource/about_remote_datasource.dart';
 import 'package:flutter_playground/src/flutterando_page/about/repositories/about_repository.dart';
-import 'package:flutter_playground/src/flutterando_page/about/services/check_internet_connectivity_service.dart';
 import 'package:flutter_playground/src/flutterando_page/about/store/about_screen_store.dart';
 import 'package:flutter_playground/src/flutterando_page/splash/flutterando_splash_page.dart';
 import 'package:flutter_playground/src/home/home_page.dart';
@@ -35,25 +36,7 @@ class FlutterandoApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        Provider(create: (_) => Dio()),
-        Provider(
-          create: (context) => RemoteDataSource(
-            dio: context.read<Dio>(),
-          ),
-        ),
-        Provider(create: (context) => CheckConnectivityService()),
-        Provider(create: (context) => LocalDataSource()),
-        Provider(
-          create: (context) => AboutRepository(
-            remoteDataSource: context.read<RemoteDataSource>(),
-            localDataSource: context.read<LocalDataSource>(),
-            connectivityService: context.read<CheckConnectivityService>(),
-          ),
-        ),
-        ChangeNotifierProvider(
-          create: (context) =>
-              AboutPageStore(repository: context.read<AboutRepository>()),
-        )
+        ...providers,
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

@@ -4,7 +4,7 @@ import 'package:flutter_playground/src/flutterando_page/about/model/about_model.
 import 'package:flutter_playground/src/flutterando_page/strings/flutterando_strings.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class LocalDataSource {
+class AboutLocalDataSource {
   Future<AboutModel?> getModel() async {
     final SharedPreferences _prefs = await SharedPreferences.getInstance();
     final model = _prefs.getString(FLUTTERANDO_MODEL_KEY);
