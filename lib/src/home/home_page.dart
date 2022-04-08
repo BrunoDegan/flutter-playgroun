@@ -28,8 +28,16 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  _onItemTapped(int index) {
+    setState(() {
+      _selectedPage = index;
+    });
+  }
+
   BottomNavigationBar _bottomNav() {
     return BottomNavigationBar(
+      showSelectedLabels: true,
+      showUnselectedLabels: false,
       currentIndex: _selectedPage,
       unselectedItemColor: Colors.white,
       selectedItemColor: const Color(0xFF055AA3),
@@ -38,7 +46,7 @@ class _HomePageState extends State<HomePage> {
       items: [
         BottomNavigationBarItem(
           icon: Image.asset(
-            "assets/flutterando_screen/activities_icon.png",
+            'assets/flutterando_screen/activities_icon.png',
             width: 20,
             height: 20,
           ),
@@ -46,7 +54,7 @@ class _HomePageState extends State<HomePage> {
         ),
         BottomNavigationBarItem(
           icon: Image.asset(
-            "assets/flutterando_screen/github_icon.png",
+            'assets/flutterando_screen/github_icon.png',
             width: 20,
             height: 20,
           ),
@@ -57,11 +65,7 @@ class _HomePageState extends State<HomePage> {
           label: flutterandoBottomsheetTitle3,
         ),
       ],
-      onTap: (index) {
-        setState(() {
-          _selectedPage = index;
-        });
-      },
+      onTap: _onItemTapped,
     );
   }
 }
