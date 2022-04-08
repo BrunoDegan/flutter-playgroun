@@ -7,12 +7,7 @@ import 'package:flutter_playground/src/animations/demo/controlled_animations_scr
 import 'package:flutter_playground/src/animations/demo/implicit_animations_screen_demo.dart';
 import 'package:flutter_playground/src/animations/implicit/button/implicit_animated_button_page.dart';
 import 'package:flutter_playground/src/animations/implicit/list/implicit_animated_list_page.dart';
-import 'package:flutter_playground/src/common/services/check_internet_connectivity_service.dart';
 import 'package:flutter_playground/src/di/provider_di.dart';
-import 'package:flutter_playground/src/flutterando_page/about/datasource/about_local_datasource.dart';
-import 'package:flutter_playground/src/flutterando_page/about/datasource/about_remote_datasource.dart';
-import 'package:flutter_playground/src/flutterando_page/about/repositories/about_repository.dart';
-import 'package:flutter_playground/src/flutterando_page/about/store/about_screen_store.dart';
 import 'package:flutter_playground/src/flutterando_page/splash/flutterando_splash_page.dart';
 import 'package:flutter_playground/src/home/home_page.dart';
 import 'package:flutter_playground/src/mockup/mockup_page.dart';
