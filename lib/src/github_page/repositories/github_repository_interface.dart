@@ -1,5 +1,5 @@
-import 'package:flutter_playground/src/github_page/model/github_model.dart';
+import 'package:flutter_playground/src/github_page/model/repository_model.dart';
 
 abstract class IGithubRepository {
-  Future<GithubModel?> getModel();
+  Future<List<RepositoryModel?>?> getModels();
 }

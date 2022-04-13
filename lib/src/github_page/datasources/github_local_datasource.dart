@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter_playground/src/flutterando_page/strings/flutterando_strings.dart';
 import 'package:flutter_playground/src/github_page/adapters/github_model_adapter.dart';
 import 'package:flutter_playground/src/github_page/datasources/github_datasource_interface.dart';
-import 'package:flutter_playground/src/github_page/model/github_model.dart';
+import 'package:flutter_playground/src/github_page/model/repository_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class GithubLocalDataSource extends IGithubDatasource {
@@ -11,17 +11,25 @@ class GithubLocalDataSource extends IGithubDatasource {
   GithubLocalDataSource({required this.adapter});
 
   @override
-  Future<GithubModel?> getModel() async {
+  Future<List<RepositoryModel>?> getModels() async {
     final SharedPreferences _prefs = await SharedPreferences.getInstance();
-    final model = _prefs.getString(GITHUB_MODEL_KEY);
-    if (model != null) {
-      return adapter.fromJson(jsonDecode(model));
+    try {
+      final List<Map<String, dynamic>> models =
+          _prefs.getString(GITHUB_MODEL_KEY) as List<Map<String, dynamic>>;
+      List<RepositoryModel> githubModels = [];
+
+      for (var model in models) {
+        githubModels.add(adapter.fromJson(model));
+      }
+
+      return githubModels;
+    } catch (ex) {
+      return null;
     }
-    return null;
   }
 
   @override
-  Future<void> saveModel(GithubModel model) async {
+  Future<void> saveModels(List<RepositoryModel?>? model) async {
     final SharedPreferences _prefs = await SharedPreferences.getInstance();
     _prefs.setString(GITHUB_MODEL_KEY, jsonEncode(model));
   }

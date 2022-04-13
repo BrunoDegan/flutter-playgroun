@@ -1,13 +1,13 @@
 import 'package:flutter_playground/src/common/page_state.dart';
-import 'package:flutter_playground/src/github_page/model/github_model.dart';
+import 'package:flutter_playground/src/github_page/model/repository_model.dart';
 
 class GithubInitialState implements PageState {}
 
 class GithubLoadingState implements PageState {}
 
 class GithubSuccessState implements PageState {
-  final GithubModel model;
-  GithubSuccessState(this.model);
+  final List<RepositoryModel> models;
+  GithubSuccessState(this.models);
 }
 
 class GithubErrorState implements PageState {

@@ -4,18 +4,18 @@ import 'package:flutter_playground/src/github_page/events/github_events.dart';
 import 'package:flutter_playground/src/github_page/repositories/github_repository.dart';
 import 'package:flutter_playground/src/github_page/states/github_page_state.dart';
 
-class GithubBloc extends Bloc<GithubEvents, PageState> {
+class GithubPageBloc extends Bloc<GithubEvents, PageState> {
   final GithubRepository repository;
 
-  GithubBloc({required this.repository}) : super(GithubInitialState()) {
-    on<FetchGithubEvent>((FetchGithubEvent event, emit) => _fetchGithubRepos);
+  GithubPageBloc({required this.repository})
+      : super(GithubInitialState()) {
+    on<FetchGithubEvent>(_fetchGithubRepos);
   }
 
-  Future<void> _fetchGithubRepos(FetchGithubEvent event, emit) async {
+  Future<void> _fetchGithubRepos(event, emit) async {
     emit(GithubLoadingState());
-
     try {
-      final model = await repository.getModel();
+      final model = await repository.getModels();
       if (model != null) {
         emit(GithubSuccessState(model));
       } else {

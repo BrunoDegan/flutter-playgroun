@@ -1,4 +1,4 @@
-class GithubModel {
+class RepositoryModel {
   late String _name;
   late String _language;
   late String _description;
@@ -17,7 +17,7 @@ class GithubModel {
   String? get defaultBranch => _defaultBranch;
   String? get url => _url;
 
-  GithubModel(
+  RepositoryModel(
       {int? stars,
       String? createdAt,
       String? updatedAt,

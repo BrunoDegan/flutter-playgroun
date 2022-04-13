@@ -7,7 +7,7 @@ import 'package:flutter_playground/src/flutterando_page/about/datasource/about_r
 import 'package:flutter_playground/src/flutterando_page/about/repositories/about_repository.dart';
 import 'package:flutter_playground/src/flutterando_page/about/store/about_screen_store.dart';
 import 'package:flutter_playground/src/github_page/adapters/github_model_adapter.dart';
-import 'package:flutter_playground/src/github_page/bloc/github_bloc.dart';
+import 'package:flutter_playground/src/github_page/blocs/github_page_bloc.dart';
 import 'package:flutter_playground/src/github_page/datasources/github_local_datasource.dart';
 import 'package:flutter_playground/src/github_page/datasources/github_remote_datasource.dart';
 import 'package:flutter_playground/src/github_page/repositories/github_repository.dart';
@@ -35,8 +35,7 @@ final module = [
     ),
   ),
   ChangeNotifierProvider(
-    create: (context) =>
-        AboutPageStore(repository: context.read()),
+    create: (context) => AboutPageStore(repository: context.read()),
   ),
   Provider(create: (_) => GithubModelAdapter()),
   Provider(
@@ -58,7 +57,7 @@ final module = [
     ),
   ),
   BlocProvider(
-    create: (context) => GithubBloc(
+    create: (context) => GithubPageBloc(
       repository: context.read(),
     ),
   )

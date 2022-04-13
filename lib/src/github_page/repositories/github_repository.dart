@@ -1,7 +1,7 @@
 import 'package:flutter_playground/src/common/services/check_internet_connectivity_service.dart';
 import 'package:flutter_playground/src/github_page/datasources/github_local_datasource.dart';
 import 'package:flutter_playground/src/github_page/datasources/github_remote_datasource.dart';
-import 'package:flutter_playground/src/github_page/model/github_model.dart';
+import 'package:flutter_playground/src/github_page/model/repository_model.dart';
 import 'package:flutter_playground/src/github_page/repositories/github_repository_interface.dart';
 
 class GithubRepository extends IGithubRepository {
@@ -15,17 +15,18 @@ class GithubRepository extends IGithubRepository {
       required this.connectivityService});
 
   @override
-  Future<GithubModel?> getModel() async {
-    GithubModel? model;
+  Future<List<RepositoryModel>?> getModels() async {
+    List<RepositoryModel>? models;
 
     if (await connectivityService.isConnected()) {
-      model = await remoteDataSource.getModel();
-      if (model != null) {
-        localDataSource.saveModel(model);
+      models = await remoteDataSource.getModels();
+      if (models != null) {
+        localDataSource.saveModels(models);
       }
     } else {
-      model = await localDataSource.getModel();
+      models = await localDataSource.getModels();
     }
-    return model;
+
+    return models;
   }
 }
