@@ -1,16 +1,16 @@
 class RepositoryModel {
-  late String _name;
-  late String _language;
-  late String _description;
+  late String? _name;
+  late String? _language;
+  late String? _description;
   int? _stars;
   String? _createdAt;
   String? _updatedAt;
   String? _defaultBranch;
   String? _url;
 
-  String get name => _name;
-  String get language => _language;
-  String get description => _description;
+  String? get name => _name;
+  String? get language => _language;
+  String? get description => _description;
   int? get stars => _stars;
   String? get createdAt => _createdAt;
   String? get updatedAt => _updatedAt;
@@ -23,9 +23,9 @@ class RepositoryModel {
       String? updatedAt,
       String? defaultBranch,
       String? url,
-      required String name,
-      required String language,
-      required String description}) {
+      required String? name,
+      required String? language,
+      required String? description}) {
     _name = name;
     _language = language;
     _stars = stars;

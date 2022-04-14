@@ -1,8 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_playground/src/common/page_state.dart';
 import 'package:flutter_playground/src/github_page/blocs/github_page_bloc.dart';
 import 'package:flutter_playground/src/github_page/events/github_events.dart';
-import 'package:flutter_playground/src/github_page/model/repository_model.dart';
 import 'package:flutter_playground/src/github_page/states/github_page_state.dart';
 
 class RepositoriesPage extends StatefulWidget {
@@ -14,27 +15,30 @@ class RepositoriesPage extends StatefulWidget {
 }
 
 class _RepositoriesPageState extends State<RepositoriesPage> {
-  late GithubPageBloc _bloc;
+  late StreamSubscription subscription;
 
   @override
   void initState() {
     super.initState();
-    _bloc = widget.bloc;
+    subscription = widget.bloc.stream.listen((event) {
+      setState(() {});
+    });
 
     WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
-      _bloc.add(FetchGithubEvent());
+      widget.bloc.add(FetchGithubEvent());
     });
   }
 
   @override
   void dispose() {
-    _bloc.close();
+    subscription.cancel();
+    widget.bloc.close();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return _handleWidgetState(_bloc.state);
+    return _handleWidgetState(widget.bloc.state);
   }
 
   Widget _handleWidgetState(PageState state) {
@@ -43,15 +47,14 @@ class _RepositoriesPageState extends State<RepositoriesPage> {
         child: CircularProgressIndicator(),
       );
     } else if (state is GithubSuccessState) {
-      List<RepositoryModel> repositories = state.models;
-
+      final repositories = state.models;
       return ListView.builder(
         itemCount: repositories.length,
         itemBuilder: ((_, index) {
           final model = repositories[index];
           return ListTile(
-            title: Text(model.name),
-            subtitle: Text(model.description),
+            title: Text(model.name ?? 'No name provided'),
+            subtitle: Text(model.description ?? 'No description provided'),
           );
         }),
       );
@@ -59,7 +62,7 @@ class _RepositoriesPageState extends State<RepositoriesPage> {
       final errorState = state as GithubErrorState;
       return Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(errorState.errorMessage),
             const SizedBox(
@@ -67,7 +70,7 @@ class _RepositoriesPageState extends State<RepositoriesPage> {
             ),
             TextButton(
                 onPressed: () {
-                  _bloc.add(FetchGithubEvent());
+                  widget.bloc.add(FetchGithubEvent());
                 },
                 child: const Text('Tentar novamente'))
           ],

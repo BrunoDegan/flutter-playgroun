@@ -7,8 +7,7 @@ import 'package:flutter_playground/src/github_page/states/github_page_state.dart
 class GithubPageBloc extends Bloc<GithubEvents, PageState> {
   final GithubRepository repository;
 
-  GithubPageBloc({required this.repository})
-      : super(GithubInitialState()) {
+  GithubPageBloc({required this.repository}) : super(GithubInitialState()) {
     on<FetchGithubEvent>(_fetchGithubRepos);
   }
 

@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_playground/src/animations/animations_page.dart';
 import 'package:flutter_playground/src/animations/controlled/button/controlled_animated_button_page.dart';

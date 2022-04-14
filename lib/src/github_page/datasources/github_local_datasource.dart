@@ -29,8 +29,18 @@ class GithubLocalDataSource extends IGithubDatasource {
   }
 
   @override
-  Future<void> saveModels(List<RepositoryModel?>? model) async {
+  Future<void> saveModels(List<RepositoryModel?>? repositories) async {
     final SharedPreferences _prefs = await SharedPreferences.getInstance();
-    _prefs.setString(GITHUB_MODEL_KEY, jsonEncode(model));
+    List<String> repositoriesList = [];
+
+    if (repositories != null) {
+      for (var model in repositories) {
+        if (model != null) {
+          repositoriesList.add(adapter.toJson(model).toString());
+        }
+      }
+    }
+
+    _prefs.setString(GITHUB_MODEL_KEY, repositoriesList.toString());
   }
 }

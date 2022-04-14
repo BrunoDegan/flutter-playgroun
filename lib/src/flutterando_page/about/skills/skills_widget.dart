@@ -40,17 +40,15 @@ class _SkillWidgetState extends State<SkillsWidget> {
               Radius.circular(30.0),
             ),
           ),
-          child: Expanded(
-            child: ListView.builder(
-              itemCount: widget.model.skills.length,
-              shrinkWrap: true,
-              scrollDirection: Axis.vertical,
-              itemBuilder: (context, pos) {
-                return SkillsListTile(data: widget.model.skills[pos]);
-              },
-              padding: const EdgeInsets.only(
-                  top: 14.0, bottom: 14.0, left: 15, right: 15),
-            ),
+          child: ListView.builder(
+            itemCount: widget.model.skills.length,
+            shrinkWrap: true,
+            scrollDirection: Axis.vertical,
+            itemBuilder: (context, pos) {
+              return SkillsListTile(data: widget.model.skills[pos]);
+            },
+            padding: const EdgeInsets.only(
+                top: 14.0, bottom: 14.0, left: 15, right: 15),
           ),
         )
       ],

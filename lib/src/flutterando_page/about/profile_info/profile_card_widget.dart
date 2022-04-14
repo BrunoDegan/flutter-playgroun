@@ -44,7 +44,7 @@ class _AboutCardState extends State<ProfileCardWidget> {
               style: const TextStyle(
                 decoration: TextDecoration.none,
                 fontWeight: FontWeight.w400,
-                fontFamily: "Poppins-Medium",
+                fontFamily: 'Poppins-Medium',
                 fontStyle: FontStyle.normal,
                 color: Color(0xFFEDF4F8),
                 fontSize: 16.0,
@@ -56,7 +56,7 @@ class _AboutCardState extends State<ProfileCardWidget> {
             textAlign: TextAlign.center,
             style: const TextStyle(
               decoration: TextDecoration.none,
-              fontFamily: "Poppins-Medium",
+              fontFamily: 'Poppins-Medium',
               color: Color(0xFF51565A),
               fontStyle: FontStyle.normal,
               fontSize: 12.0,
@@ -77,22 +77,22 @@ class _AboutCardState extends State<ProfileCardWidget> {
       children: [
         IconButton(
           onPressed: () {},
-          icon: Image.asset("assets/flutterando_screen/whatsapp.png",
+          icon: Image.asset('assets/flutterando_screen/whatsapp.png',
               fit: BoxFit.cover),
         ),
         IconButton(
           onPressed: () {},
-          icon: Image.asset("assets/flutterando_screen/github.png",
+          icon: Image.asset('assets/flutterando_screen/github.png',
               fit: BoxFit.cover),
         ),
         IconButton(
           onPressed: () {},
-          icon: Image.asset("assets/flutterando_screen/instagram.png",
+          icon: Image.asset('assets/flutterando_screen/instagram.png',
               fit: BoxFit.cover),
         ),
         IconButton(
           onPressed: () {},
-          icon: Image.asset("assets/flutterando_screen/facebook.png",
+          icon: Image.asset('assets/flutterando_screen/facebook.png',
               fit: BoxFit.cover),
         ),
       ],

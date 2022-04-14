@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_playground/src/common/strings_constants.dart';
 import 'package:flutter_playground/src/flutterando_page/about/flutterando_about_page.dart';
+import 'package:flutter_playground/src/flutterando_page/about/store/about_screen_store.dart';
 import 'package:flutter_playground/src/flutterando_page/flutterando_main_page.dart';
 import 'package:flutter_playground/src/github_page/blocs/github_page_bloc.dart';
 import 'package:flutter_playground/src/github_page/view/repositories_page.dart';
@@ -15,28 +16,14 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectedPage = 0;
-  late GithubPageBloc _bloc;
-  late List _pageOptions;
-
-  @override
-  void initState() {
-    super.initState();
-    _bloc = context.read<GithubPageBloc>();
-    _pageOptions = [
-      const FlutterandoActivitiesPage(),
-      RepositoriesPage(bloc: _bloc),
-      const FlutterandoAboutPage()
-    ];
-  }
-
-  @override
-  void dispose() {
-    _bloc.close();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
+    List _pageOptions = [
+      const FlutterandoActivitiesPage(),
+      RepositoriesPage(bloc: Provider.of<GithubPageBloc>(context)),
+      FlutterandoAboutPage(store: Provider.of<AboutPageStore>(context))
+    ];
     return Scaffold(
       body: _pageOptions[_selectedPage],
       bottomNavigationBar: _bottomNav(),

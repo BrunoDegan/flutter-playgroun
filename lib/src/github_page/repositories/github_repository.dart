@@ -20,7 +20,7 @@ class GithubRepository extends IGithubRepository {
 
     if (await connectivityService.isConnected()) {
       models = await remoteDataSource.getModels();
-      if (models != null) {
+      if(models != null) {
         localDataSource.saveModels(models);
       }
     } else {

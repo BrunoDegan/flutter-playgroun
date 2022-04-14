@@ -13,7 +13,7 @@ class RepositoryCard extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Text(model.name),
+          Text(model.name ?? 'No name provided'),
         ],
       ),
     );

@@ -10,6 +10,7 @@ class AboutPageStore extends ValueNotifier<PageState> {
 
   fetchAboutScreenModel() async {
     value = LoadingState();
+    notifyListeners();
     value = await repository.getModel();
     notifyListeners();
   }

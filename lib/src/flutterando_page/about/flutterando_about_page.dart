@@ -5,27 +5,22 @@ import 'package:flutter_playground/src/flutterando_page/about/skills/skills_widg
 import 'package:flutter_playground/src/flutterando_page/about/store/about_screen_store.dart';
 import 'package:flutter_playground/src/common/page_state.dart';
 import 'package:flutter_playground/src/flutterando_page/view/widgets/flutterando_top_bar_widget.dart';
-import 'package:provider/provider.dart';
-
 import '../states/about_page_state.dart';
 
 class FlutterandoAboutPage extends StatefulWidget {
-  const FlutterandoAboutPage({Key? key}) : super(key: key);
+  final AboutPageStore store;
+  const FlutterandoAboutPage({Key? key, required this.store}) : super(key: key);
 
   @override
   State<FlutterandoAboutPage> createState() => _FlutterandoAboutPageState();
 }
 
 class _FlutterandoAboutPageState extends State<FlutterandoAboutPage> {
-  late AboutPageStore _store;
-
   @override
   void initState() {
     super.initState();
-    _store = context.read<AboutPageStore>();
-    _store.fetchAboutScreenModel();
-    _store.addListener(() {
-      setState(() {});
+    WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
+      widget.store.fetchAboutScreenModel();
     });
   }
 
@@ -55,7 +50,7 @@ class _FlutterandoAboutPageState extends State<FlutterandoAboutPage> {
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
       child: ValueListenableBuilder<PageState>(
-        valueListenable: _store,
+        valueListenable: widget.store,
         builder: (context, value, child) {
           if (value is SuccessState) {
             return ListView(children: [
