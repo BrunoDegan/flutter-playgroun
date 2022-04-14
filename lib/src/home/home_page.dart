@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_playground/src/common/strings_constants.dart';
 import 'package:flutter_playground/src/flutterando_page/about/flutterando_about_page.dart';
 import 'package:flutter_playground/src/flutterando_page/about/store/about_screen_store.dart';
-import 'package:flutter_playground/src/flutterando_page/flutterando_main_page.dart';
+import 'package:flutter_playground/src/flutterando_page/view/page/flutterando_main_page.dart';
 import 'package:flutter_playground/src/github_page/blocs/github_page_bloc.dart';
-import 'package:flutter_playground/src/github_page/view/repositories_page.dart';
+import 'package:flutter_playground/src/github_page/view/page/repositories_page.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
