@@ -5,6 +5,7 @@ import 'package:flutter_playground/src/common/page_state.dart';
 import 'package:flutter_playground/src/github_page/blocs/github_page_bloc.dart';
 import 'package:flutter_playground/src/github_page/events/github_events.dart';
 import 'package:flutter_playground/src/github_page/states/github_page_state.dart';
+import 'package:flutter_playground/src/github_page/view/widgets/repositories_card.dart';
 
 class RepositoriesPage extends StatefulWidget {
   final GithubPageBloc bloc;
@@ -51,11 +52,7 @@ class _RepositoriesPageState extends State<RepositoriesPage> {
       return ListView.builder(
         itemCount: repositories.length,
         itemBuilder: ((_, index) {
-          final model = repositories[index];
-          return ListTile(
-            title: Text(model.name ?? 'No name provided'),
-            subtitle: Text(model.description ?? 'No description provided'),
-          );
+          return RepositoryCard(model: repositories[index]);
         }),
       );
     } else {
@@ -69,10 +66,18 @@ class _RepositoriesPageState extends State<RepositoriesPage> {
               height: 10.0,
             ),
             TextButton(
-                onPressed: () {
-                  widget.bloc.add(FetchGithubEvent());
-                },
-                child: const Text('Tentar novamente'))
+              onPressed: () {
+                widget.bloc.add(FetchGithubEvent());
+              },
+              child: const Text(
+                'Tentar novamente',
+                style: TextStyle(
+                    color: Colors.blueAccent,
+                    fontWeight: FontWeight.w300,
+                    fontSize: 14.0,
+                    backgroundColor: Colors.blueGrey),
+              ),
+            )
           ],
         ),
       );
