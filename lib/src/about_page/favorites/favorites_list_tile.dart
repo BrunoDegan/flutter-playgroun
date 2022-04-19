@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_playground/src/flutterando_page/about/model/favorites_model.dart';
+import 'package:flutter_playground/src/about_page/domain/model/favorites_model.dart';
 
 class FavoritesListTileWidget extends StatefulWidget {
   final FavoritesModel data;

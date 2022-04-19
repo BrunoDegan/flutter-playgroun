@@ -1,11 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_playground/src/about_page/domain/datasource/about_local_datasource.dart';
+import 'package:flutter_playground/src/about_page/domain/datasource/about_remote_datasource.dart';
+import 'package:flutter_playground/src/about_page/domain/repositories/about_repository.dart';
+import 'package:flutter_playground/src/about_page/store/about_screen_store.dart';
 import 'package:flutter_playground/src/common/services/check_internet_connectivity_service.dart';
 import 'package:flutter_playground/src/common/services/internet_service.dart';
-import 'package:flutter_playground/src/flutterando_page/about/datasource/about_local_datasource.dart';
-import 'package:flutter_playground/src/flutterando_page/about/datasource/about_remote_datasource.dart';
-import 'package:flutter_playground/src/flutterando_page/about/repositories/about_repository.dart';
-import 'package:flutter_playground/src/flutterando_page/about/store/about_screen_store.dart';
 import 'package:flutter_playground/src/github_page/adapters/github_model_adapter.dart';
 import 'package:flutter_playground/src/github_page/blocs/github_page_bloc.dart';
 import 'package:flutter_playground/src/github_page/datasources/github_local_datasource.dart';

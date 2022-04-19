@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter_playground/src/flutterando_page/about/model/about_model.dart';
+import 'package:flutter_playground/src/about_page/domain/model/about_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../../utils/about_page_mock.dart';

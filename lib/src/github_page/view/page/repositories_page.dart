@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_playground/src/common/complete_state_mixin.dart';
 import 'package:flutter_playground/src/common/page_state.dart';
 import 'package:flutter_playground/src/github_page/blocs/github_page_bloc.dart';
 import 'package:flutter_playground/src/github_page/events/github_events.dart';
@@ -15,7 +17,8 @@ class RepositoriesPage extends StatefulWidget {
   State<RepositoriesPage> createState() => _RepositoriesPageState();
 }
 
-class _RepositoriesPageState extends State<RepositoriesPage> {
+class _RepositoriesPageState extends State<RepositoriesPage>
+    with CompleteStateMixin {
   late StreamSubscription subscription;
 
   @override
@@ -23,10 +26,6 @@ class _RepositoriesPageState extends State<RepositoriesPage> {
     super.initState();
     subscription = widget.bloc.stream.listen((event) {
       setState(() {});
-    });
-
-    WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
-      widget.bloc.add(FetchGithubEvent());
     });
   }
 
@@ -39,7 +38,10 @@ class _RepositoriesPageState extends State<RepositoriesPage> {
 
   @override
   Widget build(BuildContext context) {
-    return _handleWidgetState(widget.bloc.state);
+    final bloc = context.watch<GithubPageBloc>();
+    final state = bloc.state;
+
+    return _handleWidgetState(state);
   }
 
   Widget _handleWidgetState(PageState state) {
@@ -67,7 +69,7 @@ class _RepositoriesPageState extends State<RepositoriesPage> {
             ),
             TextButton(
               onPressed: () {
-                widget.bloc.add(FetchGithubEvent());
+                context.read<GithubPageBloc>().add(FetchGithubEvent());
               },
               child: const Text(
                 'Tentar novamente',
@@ -82,5 +84,10 @@ class _RepositoriesPageState extends State<RepositoriesPage> {
         ),
       );
     }
+  }
+
+  @override
+  void completeState() {
+    widget.bloc.add(FetchGithubEvent());
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_playground/src/flutterando_page/about/favorites/favorites_list_tile.dart';
-import 'package:flutter_playground/src/flutterando_page/about/model/about_model.dart';
-import 'package:flutter_playground/src/flutterando_page/strings/flutterando_strings.dart';
+import 'package:flutter_playground/src/about_page/favorites/favorites_list_tile.dart';
+import 'package:flutter_playground/src/about_page/domain/model/about_model.dart';
+import 'package:flutter_playground/src/main_page/strings/flutterando_strings.dart';
 
 class FavoritesWidget extends StatefulWidget {
   final AboutModel model;

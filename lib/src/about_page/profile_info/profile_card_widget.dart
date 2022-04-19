@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_playground/src/flutterando_page/about/model/about_model.dart';
+import 'package:flutter_playground/src/about_page/domain/model/about_model.dart';
 
 class ProfileCardWidget extends StatefulWidget {
   final AboutModel model;

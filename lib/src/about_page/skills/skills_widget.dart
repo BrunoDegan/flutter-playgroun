@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_playground/src/flutterando_page/about/model/about_model.dart';
-import 'package:flutter_playground/src/flutterando_page/about/skills/skills_list_tile.dart';
-import 'package:flutter_playground/src/flutterando_page/strings/flutterando_strings.dart';
+import 'package:flutter_playground/src/about_page/domain/model/about_model.dart';
+import 'package:flutter_playground/src/about_page/skills/skills_list_tile.dart';
+import 'package:flutter_playground/src/main_page/strings/flutterando_strings.dart';
 
 class SkillsWidget extends StatefulWidget {
   final AboutModel model;
@@ -22,7 +22,7 @@ class _SkillWidgetState extends State<SkillsWidget> {
           child: Text(
             SKILLS,
             style: TextStyle(
-              fontFamily: "Poppins-Medium",
+              fontFamily: 'Poppins-Medium',
               fontWeight: FontWeight.w400,
               fontSize: 14.0,
               color: Color(

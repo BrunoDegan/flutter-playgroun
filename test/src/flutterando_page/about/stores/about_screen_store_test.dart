@@ -1,12 +1,12 @@
-import 'package:flutter_playground/src/flutterando_page/about/repositories/about_repository.dart';
-import 'package:flutter_playground/src/flutterando_page/about/store/about_screen_store.dart';
-import 'package:flutter_playground/src/flutterando_page/states/about_page_state.dart';
+import 'package:flutter_playground/src/about_page/domain/repositories/about_repository_interface.dart';
+import 'package:flutter_playground/src/about_page/states/about_page_state.dart';
+import 'package:flutter_playground/src/about_page/store/about_screen_store.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../../utils/about_page_mock.dart';
 
-class AboutRepositoryMock extends Mock implements AboutRepository {}
+class AboutRepositoryMock extends Mock implements IAboutRepository {}
 
 /// Mocks a callback function on which you can use verify
 

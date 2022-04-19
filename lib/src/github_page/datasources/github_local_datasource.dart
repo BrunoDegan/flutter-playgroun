@@ -1,6 +1,4 @@
-import 'dart:convert';
-
-import 'package:flutter_playground/src/flutterando_page/strings/flutterando_strings.dart';
+import 'package:flutter_playground/src/main_page/strings/flutterando_strings.dart';
 import 'package:flutter_playground/src/github_page/adapters/github_model_adapter.dart';
 import 'package:flutter_playground/src/github_page/datasources/github_datasource_interface.dart';
 import 'package:flutter_playground/src/github_page/model/repository_model.dart';

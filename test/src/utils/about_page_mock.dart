@@ -1,6 +1,6 @@
-import 'package:flutter_playground/src/flutterando_page/about/model/about_model.dart';
-import 'package:flutter_playground/src/flutterando_page/about/model/favorites_model.dart';
-import 'package:flutter_playground/src/flutterando_page/about/model/skill_model.dart';
+import 'package:flutter_playground/src/about_page/domain/model/about_model.dart';
+import 'package:flutter_playground/src/about_page/domain/model/favorites_model.dart';
+import 'package:flutter_playground/src/about_page/domain/model/skill_model.dart';
 
 final modelMock = AboutModel(
   userImagePath: 'assets/flutterando_screen/profile_image.jpeg',
@@ -8,24 +8,24 @@ final modelMock = AboutModel(
   description:
       'Duis rhoncus dui venenatis consequat porttitor. Etiam aliquet congue consequat. In posuere, nunc sit amet laoreet blandit, urna sapien.',
   skills: [
-    SkillsModel(title: 'Flutter', percentage: 62),
-    SkillsModel(title: 'Android', percentage: 100),
-    SkillsModel(title: 'Kotlin', percentage: 92),
-    SkillsModel(title: 'Python', percentage: 58),
-    SkillsModel(title: 'Machine learning', percentage: 34),
-    SkillsModel(title: 'Data Science', percentage: 34),
-    SkillsModel(title: 'C/C++', percentage: 17),
+    const SkillsModel(title: 'Flutter', percentage: 62),
+    const SkillsModel(title: 'Android', percentage: 100),
+    const SkillsModel(title: 'Kotlin', percentage: 92),
+    const SkillsModel(title: 'Python', percentage: 58),
+    const SkillsModel(title: 'Machine learning', percentage: 34),
+    const SkillsModel(title: 'Data Science', percentage: 34),
+    const SkillsModel(title: 'C/C++', percentage: 17),
   ],
   favorites: [
-    FavoritesModel(
+    const FavoritesModel(
         title: 'Flutter', imagePath: 'assets/flutterando_screen/flutter.png'),
-    FavoritesModel(
+    const FavoritesModel(
         title: 'Python', imagePath: 'assets/flutterando_screen/python.png'),
-    FavoritesModel(
+    const FavoritesModel(
         title: 'Java', imagePath: 'assets/flutterando_screen/java.png'),
-    FavoritesModel(
+    const FavoritesModel(
         title: 'Python', imagePath: 'assets/flutterando_screen/python.png'),
-    FavoritesModel(
+    const FavoritesModel(
         title: 'Kotlin', imagePath: 'assets/flutterando_screen/kotlin.png')
   ],
 );

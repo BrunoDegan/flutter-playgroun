@@ -1,8 +1,8 @@
+import 'package:flutter_playground/src/about_page/domain/datasource/about_local_datasource.dart';
+import 'package:flutter_playground/src/about_page/domain/datasource/about_remote_datasource.dart';
+import 'package:flutter_playground/src/about_page/domain/repositories/about_repository.dart';
+import 'package:flutter_playground/src/about_page/states/about_page_state.dart';
 import 'package:flutter_playground/src/common/services/check_internet_connectivity_service.dart';
-import 'package:flutter_playground/src/flutterando_page/about/datasource/about_local_datasource.dart';
-import 'package:flutter_playground/src/flutterando_page/about/datasource/about_remote_datasource.dart';
-import 'package:flutter_playground/src/flutterando_page/about/repositories/about_repository.dart';
-import 'package:flutter_playground/src/flutterando_page/states/about_page_state.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 

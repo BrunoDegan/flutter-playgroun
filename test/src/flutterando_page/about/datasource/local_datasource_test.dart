@@ -1,5 +1,5 @@
-import 'package:flutter_playground/src/flutterando_page/about/datasource/about_local_datasource.dart';
-import 'package:flutter_playground/src/flutterando_page/about/model/about_model.dart';
+import 'package:flutter_playground/src/about_page/domain/datasource/about_local_datasource.dart';
+import 'package:flutter_playground/src/about_page/domain/model/about_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:shared_preferences/shared_preferences.dart';

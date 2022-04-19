@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_playground/src/about_page/domain/model/list_model.dart';
 import 'package:flutter_playground/src/common/strings_constants.dart';
 import 'package:flutter_playground/src/common/text_formatter.dart';
-import 'package:flutter_playground/src/flutterando_page/about/model/list_model.dart';
 
 class FlutterandoListTile extends StatefulWidget {
   final FlutterandoListModel item;

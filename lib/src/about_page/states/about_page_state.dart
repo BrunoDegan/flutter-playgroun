@@ -1,4 +1,4 @@
-import 'package:flutter_playground/src/flutterando_page/about/model/about_model.dart';
+import 'package:flutter_playground/src/about_page/domain/model/about_model.dart';
 import 'package:flutter_playground/src/common/page_state.dart';
 
 class InitialState implements PageState {}

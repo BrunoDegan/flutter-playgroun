@@ -7,8 +7,8 @@ import 'package:flutter_playground/src/animations/demo/implicit_animations_scree
 import 'package:flutter_playground/src/animations/implicit/button/implicit_animated_button_page.dart';
 import 'package:flutter_playground/src/animations/implicit/list/implicit_animated_list_page.dart';
 import 'package:flutter_playground/src/di/provider_di.dart';
-import 'package:flutter_playground/src/flutterando_page/splash/flutterando_splash_page.dart';
 import 'package:flutter_playground/src/home/home_page.dart';
+import 'package:flutter_playground/src/main_page/splash/flutterando_splash_page.dart';
 import 'package:flutter_playground/src/mockup/mockup_page.dart';
 import 'package:flutter_playground/src/mockup/money_screen/money_page.dart';
 import 'package:flutter_playground/src/mockup/tinder_screen/tinder_page.dart';
