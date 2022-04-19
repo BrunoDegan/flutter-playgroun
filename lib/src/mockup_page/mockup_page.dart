@@ -29,7 +29,7 @@ class _MockupPageState extends State<MockupPage> {
                 //TODO CHANGE THEME
               },
               child: Image.asset(
-                "assets/flutterando_screen/moon.png",
+                'assets/flutterando_screen/moon.png',
                 alignment: Alignment.centerRight,
                 width: 22.0,
                 height: 24.0,

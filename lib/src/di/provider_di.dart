@@ -8,9 +8,9 @@ import 'package:flutter_playground/src/common/services/check_internet_connectivi
 import 'package:flutter_playground/src/common/services/internet_service.dart';
 import 'package:flutter_playground/src/github_page/adapters/github_model_adapter.dart';
 import 'package:flutter_playground/src/github_page/blocs/github_page_bloc.dart';
-import 'package:flutter_playground/src/github_page/datasources/github_local_datasource.dart';
-import 'package:flutter_playground/src/github_page/datasources/github_remote_datasource.dart';
-import 'package:flutter_playground/src/github_page/repositories/github_repository.dart';
+import 'package:flutter_playground/src/github_page/domain/datasources/github_local_datasource.dart';
+import 'package:flutter_playground/src/github_page/domain/datasources/github_remote_datasource.dart';
+import 'package:flutter_playground/src/github_page/domain/repositories/github_repository.dart';
 import 'package:provider/provider.dart';
 
 final module = [

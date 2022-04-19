@@ -1,5 +1,5 @@
 import 'package:flutter_playground/src/common/page_state.dart';
-import 'package:flutter_playground/src/github_page/model/repository_model.dart';
+import 'package:flutter_playground/src/github_page/domain/model/repository_model.dart';
 
 class GithubInitialState implements PageState {}
 

@@ -1,4 +1,4 @@
-import 'package:flutter_playground/src/github_page/model/repository_model.dart';
+import 'package:flutter_playground/src/github_page/domain/model/repository_model.dart';
 import 'package:intl/intl.dart';
 
 class GithubModelAdapter {

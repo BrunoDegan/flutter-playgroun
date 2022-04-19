@@ -1,7 +1,7 @@
+import 'package:flutter_playground/src/github_page/domain/datasources/github_datasource_interface.dart';
+import 'package:flutter_playground/src/github_page/domain/model/repository_model.dart';
 import 'package:flutter_playground/src/main_page/strings/flutterando_strings.dart';
 import 'package:flutter_playground/src/github_page/adapters/github_model_adapter.dart';
-import 'package:flutter_playground/src/github_page/datasources/github_datasource_interface.dart';
-import 'package:flutter_playground/src/github_page/model/repository_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class GithubLocalDataSource extends IGithubDatasource {
