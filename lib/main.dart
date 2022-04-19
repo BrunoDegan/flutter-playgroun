@@ -9,14 +9,14 @@ import 'package:flutter_playground/src/animations/implicit/list/implicit_animate
 import 'package:flutter_playground/src/di/provider_di.dart';
 import 'package:flutter_playground/src/home/home_page.dart';
 import 'package:flutter_playground/src/main_page/splash/flutterando_splash_page.dart';
-import 'package:flutter_playground/src/mockup/mockup_page.dart';
-import 'package:flutter_playground/src/mockup/money_screen/money_page.dart';
-import 'package:flutter_playground/src/mockup/tinder_screen/tinder_page.dart';
-import 'package:flutter_playground/src/playground/playground_screen.dart';
+import 'package:flutter_playground/src/mockup_page/mockup_page.dart';
+import 'package:flutter_playground/src/mockup_page/money_screen/money_page.dart';
+import 'package:flutter_playground/src/mockup_page/tinder_screen/tinder_page.dart';
+import 'package:flutter_playground/src/playground_page/playground_screen.dart';
+import 'package:flutter_playground/src/playground_page/validador_cpf/validador_cpf_page.dart';
 import 'package:flutter_playground/src/routes/constants_router.dart';
 import 'package:flutter_playground/themes/themes.dart';
 import 'package:provider/provider.dart';
-import 'src/playground/validador_cpf/validador_cpf_page.dart';
 
 void main() {
   runApp(const FlutterandoApp());

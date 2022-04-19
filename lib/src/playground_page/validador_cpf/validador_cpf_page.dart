@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_playground/src/common/strings_constants.dart';
-import 'package:flutter_playground/src/playground/validador_cpf/store/generator/cpf_generator_store.dart';
-import 'package:flutter_playground/src/playground/validador_cpf/store/validator/cpf_validator_store.dart';
+import 'package:flutter_playground/src/playground_page/validador_cpf/store/generator/cpf_generator_store.dart';
+import 'package:flutter_playground/src/playground_page/validador_cpf/store/validator/cpf_validator_store.dart';
 
 class ValidadorCpfPage extends StatefulWidget {
   const ValidadorCpfPage({Key? key}) : super(key: key);

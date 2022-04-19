@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_playground/src/common/text_formatter.dart';
-import 'package:flutter_playground/src/mockup/tinder_screen/tinder_button.dart';
-import 'package:flutter_playground/src/mockup/tinder_screen/tinder_strings.dart';
+import 'package:flutter_playground/src/mockup_page/tinder_screen/tinder_button.dart';
+import 'package:flutter_playground/src/mockup_page/tinder_screen/tinder_strings.dart';
 import 'package:flutter_svg/svg.dart';
 
 class _TinderPageState extends State<TinderPage> {

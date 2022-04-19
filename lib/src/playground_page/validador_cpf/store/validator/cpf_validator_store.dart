@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter_playground/src/playground/validador_cpf/model/cpf_model.dart';
-import 'package:flutter_playground/src/playground/validador_cpf/store/validator/cpf_validator_store_contract.dart';
+import 'package:flutter_playground/src/playground_page/validador_cpf/model/cpf_model.dart';
+import 'package:flutter_playground/src/playground_page/validador_cpf/store/validator/cpf_validator_store_contract.dart';
 
 class CpfValidatorStore extends ValueNotifier<bool>
     implements CpfValidatorStoreContract {

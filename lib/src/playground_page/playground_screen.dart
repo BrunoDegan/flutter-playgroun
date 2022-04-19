@@ -11,7 +11,7 @@ class PlaygroundScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Flutterando Playground"),
+        title: const Text('Flutterando Playground'),
       ),
       body: Center(
         child: ListView(
