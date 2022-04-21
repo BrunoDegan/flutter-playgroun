@@ -3,19 +3,23 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_playground/src/about_page/domain/datasource/about_local_datasource.dart';
 import 'package:flutter_playground/src/about_page/domain/datasource/about_remote_datasource.dart';
 import 'package:flutter_playground/src/about_page/domain/repositories/about_repository.dart';
+import 'package:flutter_playground/src/about_page/domain/repositories/about_repository_interface.dart';
+import 'package:flutter_playground/src/about_page/domain/usecases/fetch_about_service_use_case.dart';
 import 'package:flutter_playground/src/about_page/store/about_screen_store.dart';
 import 'package:flutter_playground/src/common/services/check_internet_connectivity_service.dart';
-import 'package:flutter_playground/src/common/services/internet_service.dart';
+import 'package:flutter_playground/src/common/services/internet_request_service.dart';
 import 'package:flutter_playground/src/github_page/adapters/github_model_adapter.dart';
 import 'package:flutter_playground/src/github_page/blocs/github_page_bloc.dart';
 import 'package:flutter_playground/src/github_page/domain/datasources/github_local_datasource.dart';
 import 'package:flutter_playground/src/github_page/domain/datasources/github_remote_datasource.dart';
 import 'package:flutter_playground/src/github_page/domain/repositories/github_repository.dart';
+import 'package:flutter_playground/src/github_page/domain/repositories/github_repository_interface.dart';
+import 'package:flutter_playground/src/github_page/domain/usecases/fetch_github_data_usecase.dart';
 import 'package:provider/provider.dart';
 
 final module = [
-  Provider(create: (_) => Dio()),
-  Provider(create: (context) => CheckConnectivityService()),
+  Provider.value(value: Dio()),
+  Provider.value(value: CheckConnectivityService()),
   Provider(
     create: (context) => InternetRequestService(
       dio: context.read(),
@@ -27,17 +31,22 @@ final module = [
     ),
   ),
   Provider(create: (context) => AboutLocalDataSource()),
-  Provider(
+  Provider<IAboutRepository>(
     create: (context) => AboutRepository(
       remoteDataSource: context.read(),
       localDataSource: context.read(),
       connectivityService: context.read(),
     ),
   ),
-  ChangeNotifierProvider(
-    create: (context) => AboutPageStore(repository: context.read()),
+  Provider<IFetchAboutDataUseCase>(
+    create: (context) => FetchAboutDataUseCase(
+      context.read(),
+    ),
   ),
-  Provider(create: (_) => GithubModelAdapter()),
+  ChangeNotifierProvider(
+    create: (context) => AboutPageStore(useCase: context.read()),
+  ),
+  Provider.value(value: GithubModelAdapter()),
   Provider(
     create: (context) => GithubLocalDataSource(
       adapter: context.read(),
@@ -49,16 +58,21 @@ final module = [
       adapter: context.read(),
     ),
   ),
-  Provider(
+  Provider<IGithubRepository>(
     create: (context) => GithubRepository(
       localDataSource: context.read(),
       remoteDataSource: context.read(),
       connectivityService: context.read(),
     ),
   ),
+  Provider<IFetchGithubDataUsecase>(
+    create: (context) => FetchGitbubDataUsecase(
+      context.read(),
+    ),
+  ),
   BlocProvider(
     create: (context) => GithubPageBloc(
-      repository: context.read(),
+      useCase: context.read(),
     ),
-  )
+  ),
 ];

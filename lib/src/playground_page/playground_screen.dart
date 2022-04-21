@@ -1,4 +1,4 @@
-import 'package:flutter_playground/src/common/home_button.dart';
+import 'package:flutter_playground/src/common/components/home_button.dart';
 import 'package:flutter_playground/src/routes/constants_router.dart';
 import 'package:flutter/material.dart';
 

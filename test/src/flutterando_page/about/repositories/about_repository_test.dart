@@ -26,7 +26,7 @@ main() {
     remoteDatasourceMock = RemoteDataSourceMock();
     checkConnectivityMock = CheckConnectivityServiceMock();
     repository = AboutRepository(
-      remoteDataSource: remoteDatasourceMock,
+     remoteDataSource: remoteDatasourceMock,
       localDataSource: localDataSourceMock,
       connectivityService: checkConnectivityMock,
     );

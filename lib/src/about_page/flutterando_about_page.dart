@@ -3,6 +3,7 @@ import 'package:flutter_playground/src/about_page/favorites/favorites_widget.dar
 import 'package:flutter_playground/src/about_page/profile_info/profile_card_widget.dart';
 import 'package:flutter_playground/src/about_page/skills/skills_widget.dart';
 import 'package:flutter_playground/src/about_page/store/about_screen_store.dart';
+import 'package:flutter_playground/src/common/complete_state_mixin.dart';
 import 'package:flutter_playground/src/common/page_state.dart';
 import 'package:flutter_playground/src/main_page/view/widgets/flutterando_top_bar_widget.dart';
 import 'states/about_page_state.dart';
@@ -15,15 +16,8 @@ class FlutterandoAboutPage extends StatefulWidget {
   State<FlutterandoAboutPage> createState() => _FlutterandoAboutPageState();
 }
 
-class _FlutterandoAboutPageState extends State<FlutterandoAboutPage> {
-  @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
-      widget.store.fetchAboutScreenModel();
-    });
-  }
-
+class _FlutterandoAboutPageState extends State<FlutterandoAboutPage>
+    with CompleteStateMixin {
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -88,5 +82,10 @@ class _FlutterandoAboutPageState extends State<FlutterandoAboutPage> {
         },
       ),
     );
+  }
+
+  @override
+  void completeState() {
+    widget.store.fetchAboutScreenModel();
   }
 }

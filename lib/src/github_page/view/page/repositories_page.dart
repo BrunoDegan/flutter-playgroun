@@ -88,6 +88,6 @@ class _RepositoriesPageState extends State<RepositoriesPage>
 
   @override
   void completeState() {
-    widget.bloc.add(FetchGithubEvent());
+    context.read<GithubPageBloc>().add(FetchGithubEvent());
   }
 }

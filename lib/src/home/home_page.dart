@@ -16,14 +16,16 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectedPage = 0;
+  late List _pageOptions;
 
   @override
   Widget build(BuildContext context) {
-    List _pageOptions = [
+    _pageOptions = [
       const FlutterandoActivitiesPage(),
       RepositoriesPage(bloc: Provider.of<GithubPageBloc>(context)),
       FlutterandoAboutPage(store: Provider.of<AboutPageStore>(context))
     ];
+
     return Scaffold(
       body: _pageOptions[_selectedPage],
       bottomNavigationBar: _bottomNav(),
