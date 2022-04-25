@@ -13,32 +13,32 @@ class CheckConnectivityServiceMock extends Mock
 class RemoteDataSourceMock extends Mock implements GithubRemoteDataSource {}
 
 void main() {
-  late RemoteDataSourceMock remoteDataSource;
-  late LocalDataSourceMock localDataSource;
-  late CheckConnectivityServiceMock checkConnectivityService;
+  late RemoteDataSourceMock remoteDataSourceMock;
+  late LocalDataSourceMock localDataSourceMock;
+  late CheckConnectivityServiceMock checkConnectivityServiceMock;
 
   setUp(() {
-    remoteDataSource = RemoteDataSourceMock();
-    localDataSource = LocalDataSourceMock();
-    checkConnectivityService = CheckConnectivityServiceMock();
+    remoteDataSourceMock = RemoteDataSourceMock();
+    localDataSourceMock = LocalDataSourceMock();
+    checkConnectivityServiceMock = CheckConnectivityServiceMock();
   });
 
   test(
       'GIVEN internet is connected WHEN remote datasource get model THEN check its values',
       () async {
     //Given
-    when(() => checkConnectivityService.isConnected()).thenAnswer(
+    when(() => checkConnectivityServiceMock.isConnected()).thenAnswer(
       (_) => Future.value(true),
     );
-    when(() => remoteDataSource.getModels()).thenAnswer(
+    when(() => remoteDataSourceMock.getModels()).thenAnswer(
       (_) => Future.value(repositoryListMock),
     );
-    when(() => remoteDataSource.saveModels(repositoryListMock)).thenAnswer(
+    when(() => remoteDataSourceMock.saveModels(repositoryListMock)).thenAnswer(
       (_) => Future.value(),
     );
 
     //When
-    var models = await remoteDataSource.getModels();
+    var models = await remoteDataSourceMock.getModels();
 
     //Then
     expect(models, repositoryListMock);
@@ -48,18 +48,18 @@ void main() {
       'GIVEN internet is not connected WHEN local datasource get model THEN check its values',
       () async {
     //Given
-    when(() => checkConnectivityService.isConnected()).thenAnswer(
+    when(() => checkConnectivityServiceMock.isConnected()).thenAnswer(
       (_) => Future.value(false),
     );
-    when(() => localDataSource.getModels()).thenAnswer(
+    when(() => localDataSourceMock.getModels()).thenAnswer(
       (_) => Future.value(repositoryListMock),
     );
-    when(() => remoteDataSource.saveModels(repositoryListMock)).thenAnswer(
+    when(() => remoteDataSourceMock.saveModels(repositoryListMock)).thenAnswer(
       (_) => Future.value(),
     );
 
     //When
-    var models = await localDataSource.getModels();
+    var models = await localDataSourceMock.getModels();
 
     expect(models, repositoryListMock);
   });
@@ -68,18 +68,18 @@ void main() {
       'GIVEN internet is connected WHEN remote datasource get null model value THEN check its values',
       () async {
     //Given
-    when(() => checkConnectivityService.isConnected()).thenAnswer(
+    when(() => checkConnectivityServiceMock.isConnected()).thenAnswer(
       (_) => Future.value(true),
     );
-    when(() => localDataSource.getModels()).thenAnswer(
+    when(() => localDataSourceMock.getModels()).thenAnswer(
       (_) => Future.value(null),
     );
-    when(() => remoteDataSource.saveModels(repositoryListMock)).thenAnswer(
+    when(() => remoteDataSourceMock.saveModels(repositoryListMock)).thenAnswer(
       (_) => Future.value(),
     );
 
     //When
-    var models = await localDataSource.getModels();
+    var models = await localDataSourceMock.getModels();
 
     //Then
     expect(models, null);
@@ -89,18 +89,18 @@ void main() {
       'GIVEN internet is not connected and shared preferences has no model saved WHEN get models THEN answers null',
       () async {
     //Given
-    when(() => checkConnectivityService.isConnected()).thenAnswer(
+    when(() => checkConnectivityServiceMock.isConnected()).thenAnswer(
       (_) => Future.value(false),
     );
-    when(() => localDataSource.getModels()).thenAnswer(
+    when(() => localDataSourceMock.getModels()).thenAnswer(
       (_) => Future.value(),
     );
-    when(() => remoteDataSource.saveModels(repositoryListMock)).thenAnswer(
+    when(() => remoteDataSourceMock.saveModels(repositoryListMock)).thenAnswer(
       (_) => Future.value(),
     );
 
     //When
-    var models = await localDataSource.getModels();
+    var models = await localDataSourceMock.getModels();
 
     expect(models, null);
   });
