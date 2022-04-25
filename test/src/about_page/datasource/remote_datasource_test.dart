@@ -3,7 +3,7 @@ import 'package:flutter_playground/src/about_page/domain/model/about_model.dart'
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-import '../../../utils/about_page_mock.dart';
+import '../../utils/about_page_mock.dart';
 
 class RemoteDataSourceMock extends Mock implements AboutRemoteDataSource {}
 

@@ -1,12 +1,12 @@
-import 'package:flutter_playground/src/about_page/domain/datasource/about_local_datasource.dart';
+import 'package:flutter_playground/src/about_page/domain/datasource/about_datasource_interface.dart';
 import 'package:flutter_playground/src/about_page/domain/model/about_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../../utils/about_page_mock.dart';
+import '../../utils/about_page_mock.dart';
 
-class LocalDataSourceMock extends Mock implements AboutLocalDataSource {}
+class LocalDataSourceMock extends Mock implements IAboutDataSource {}
 
 void main() {
   late LocalDataSourceMock dataSourceMock;
@@ -28,7 +28,7 @@ void main() {
       AboutModel? recoveredModel = await dataSourceMock.getModel();
 
       //Then
-      expect(modelMock, recoveredModel);
+      expect(recoveredModel, modelMock);
     },
   );
 
@@ -44,7 +44,7 @@ void main() {
       AboutModel? recoveredModel = await dataSourceMock.getModel();
 
       //Then
-      expect(null, recoveredModel);
+      expect(recoveredModel, null);
     },
   );
 }

@@ -5,7 +5,7 @@ import 'package:flutter_playground/src/about_page/store/about_screen_store.dart'
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-import '../../../utils/about_page_mock.dart';
+import '../utils/about_page_mock.dart';
 
 class AboutRepositoryMock extends Mock implements IAboutRepository {}
 

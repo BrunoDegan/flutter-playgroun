@@ -6,7 +6,7 @@ import 'package:flutter_playground/src/common/services/check_internet_connectivi
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-import '../../../utils/about_page_mock.dart';
+import '../../utils/about_page_mock.dart';
 
 class RemoteDataSourceMock extends Mock implements AboutRemoteDataSource {}
 

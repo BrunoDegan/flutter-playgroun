@@ -2,8 +2,9 @@ import 'package:flutter_playground/src/github_page/domain/model/repository_model
 import 'package:intl/intl.dart';
 
 class GithubModelAdapter {
+  final DateFormat dateFormatter = DateFormat('dd-MM-yyyy');
+
   RepositoryModel fromJson(Map<String, dynamic> json) {
-    final DateFormat dateFormatter = DateFormat('dd-MM-yyyy');
     return RepositoryModel(
       stars: json['stargazers_count'],
       url: json['git_url'],
@@ -21,7 +22,7 @@ class GithubModelAdapter {
         'description': model.description,
         'language': model.language,
         'stargazers_count': model.stars,
-        'create_at': model.createdAt,
+        'created_at': model.createdAt,
         'updated_at': model.updatedAt,
         'default_branch': model.defaultBranch,
         'git_url': model.url
